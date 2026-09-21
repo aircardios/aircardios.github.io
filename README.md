@@ -20,6 +20,9 @@
   <a href="https://aircardios.github.io/cards/index.html">
     <img src="https://img.shields.io/badge/模版-卡面素材库-10b981?style=for-the-badge&logo=applepay&logoColor=white" alt="Cards" />
   </a>
+  <a href="https://aircardios.github.io/community.html">
+    <img src="https://img.shields.io/badge/社区-官方交流群-2563eb?style=for-the-badge&logo=tencentqq&logoColor=white" alt="Community" />
+  </a>
   <img src="https://img.shields.io/badge/免越狱-No%20Jailbreak-10b981?style=for-the-badge&logo=apple&logoColor=white" alt="No Jailbreak" />
   <img src="https://img.shields.io/badge/支持-iOS%2018%20~%2027+-6366f1?style=for-the-badge" alt="iOS Support" />
 </p>
@@ -29,10 +32,11 @@
   <a href="https://aircardios.github.io/download.html">📥 AirCard Download (IPA下载)</a> ·
   <a href="https://aircardios.github.io/tutorial.html">📖 官方图文教程</a> ·
   <a href="https://aircardios.github.io/cards/index.html">🎨 卡面素材库</a> ·
+  <a href="https://aircardios.github.io/community.html">💬 官方社区交流群</a> ·
   <a href="#-aircard-download--ipa-极速下载">📦 网盘下载</a> ·
   <a href="#-三端原生客户端">📱 三端客户端</a> ·
   <a href="#-快速上手教程">🔧 教程</a> ·
-  <a href="#-致谢与开发者-credits">👏 致谢</a> ·
+  <a href="#-致谢与开发者-credits">👏 致谢</a>
 </p>
 
 ---
@@ -88,11 +92,23 @@
 
 ## 📦 AirCard Download & IPA 极速下载
 
-| 客户端平台 | 文件类型与版本 | 推荐安装 / 运行方式 | 网盘高速分流通道 |
-| :--- | :--- | :--- | :--- |
-| **iPhone 原生端 (AirCard IPA)** | `AirCard-iOS.ipa` (**v1.3**) | TrollStore 巨魔 / SideStore / AltStore / 爱思助手 | [迅雷网盘 (提取码: bdzw)](https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#) · [光鸭直链 (免提取码)](https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh) · [夸克网盘 (全量分流)](https://pan.quark.cn/s/b9034a60bff4) |
-| **Windows 原生版** | `aircard.exe` (v1.2.2) | 绿色单文件解压即用 (需 iTunes/AMDS 驱动) | [迅雷网盘 (提取码: 9sns)](https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#) · [光鸭直链](https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/fb902664428a) |
-| **macOS 通用版** | `AirCard.dmg` (v1.2.2) | 拖拽至 Applications (M系列/Intel 双架构) | [迅雷网盘 (提取码: htkt)](https://pan.xunlei.com/s/VP1tfH776mp7OLKRtGUCyuE2A1?pwd=htkt#) · [光鸭直链](https://www.guangyapan.com/s/1948388010319433771_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/d60fefe986c5) |
+| 客户端平台 | 文件类型与版本 | 推荐安装 / 运行方式 | 网盘高速分流通道                                                                                                                                                                                                                    |
+| :--- | :--- | :--- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **iPhone 原生端 (AirCard IPA)** | `AirCard-iOS.ipa` (**v1.3**) | TrollStore 巨魔 / SideStore / AltStore / 爱思助手 | [迅雷网盘](https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#)<br>[光鸭直链](https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh)<br>[夸克网盘](https://pan.quark.cn/s/b9034a60bff4)                                    |
+| **Windows 原生版** | `aircard.exe` (**v1.2.2**) | 绿色单文件解压即用 (需 64位 iTunes/AMDS 驱动) | [迅雷网盘](https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#)<br>[光鸭直链](https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh)<br>[夸克网盘](https://pan.quark.cn/s/fb902664428a) |
+| **macOS 通用版** | `AirCard.dmg` (**v1.2.3**) | 拖拽至 Applications (M系列/Intel 双架构) | [迅雷网盘](https://pan.xunlei.com/s/VP22p5T3dmHyci7LcWsqedA5A1?pwd=v8b5#)<br>[光鸭直链](https://www.guangyapan.com/s/1949102385200332863_aeWXEya0Twth-MDh)<br>[夸克网盘](https://pan.quark.cn/s/2468279abd40) |
+
+### 🎨 美化扩展大礼包
+- **资源名称**：AirCard 美化扩展大礼包 (50+ 套锁屏主题 & 高清卡面模板)
+- **包含内容**：精选热门 `.passthm` 锁屏数字按键主题包、Apple Wallet 1536×969 高清 PSD/PNG 卡面模版，以及交通卡 Suica 专属矢量样式。
+- **极速下载**：[夸克网盘免费下载](https://pan.quark.cn/s/c8454bb2e4f1)
+
+### 💬 官方玩家交流社区 (QQ群)
+- **群名称**：AirCard & 交互壁纸交流群
+- **QQ 群号**：`1006363010`
+- **加入方式**：
+  - 网页一键直链：[点击直接加入群聊 (通道 1)](https://qm.qq.com/q/5u0IuzGdnW)（支持手机直接唤起 QQ）
+  - 手机扫码通道：[扫码专享通道 (通道 2)](https://qm.qq.com/q/RthOcegrim) 或访问 [官方社区页面](https://aircardios.github.io/community.html) 扫码加入
 
 > 🔗 更多版本详情、MD5 校验与历史版本请访问：**[AirCard Download & IPA 下载中心](https://aircardios.github.io/download.html)**
 
@@ -108,13 +124,13 @@
   1. 开启 **LocalDevVPN**（回环路由 `127.0.0.1` 或 `10.7.0.1`）。
   2. 前往 iPhone“设置 ➔ 隐私与安全性 ➔ 开发者模式 ➔ 与 AirCard-iOS 配对”（手机通过 Bonjour 自广播实现免电脑配对）。
 
-### 2. AirCard for macOS (Universal DMG)
+### 2. AirCard for macOS (Universal DMG · 最新版 v1.2.3)
 - **文件格式**：`AirCard.dmg` (~42.8 MB)
 - **支持系统**：macOS 12.0 或更高
 - **硬件兼容**：Apple Silicon (M1/M2/M3/M4) 与 Intel (x86_64) 双架构
 - **安装方法**：打开 DMG 将 `AirCard.app` 拖入“应用程序”文件夹即可。
 
-### 3. AirCard for Windows (Rust 原生单文件)
+### 3. AirCard for Windows (Rust 原生单文件 · 最新版 v1.2.2)
 - **文件格式**：`aircard.exe` (~7.5 MB 免安装绿色版)
 - **支持系统**：Windows 10 / 11 (64位)
 - **前置要求**：需安装 **64 位 iTunes** 或 **Apple 移动设备支持服务 (AMDS)** 驱动。
@@ -139,58 +155,6 @@
 1. **导入壁纸包**：从“文件”App 导入 `.tendies` 锁屏壁纸归档文件。
 2. **识别与注入**：App 自动识别当前激活的 PosterBoard 容器与 UUID 并注入壁纸资产。
 3. **NeoSpring 注销**：写入完成后自动调用 NeoSpring 触发系统注销生效，无需整机重启！
-
----
-
-## 🛠️ 从源码构建 (Building from Source)
-
-### 编译环境要求
-- macOS 14.0 或更高版本，配有 Xcode 16 或更新版本
-- XcodeGen (`brew install xcodegen`)
-- Rust 工具链（仅在重新编译 `rust-core` 时需要）
-
-### 构建 IPA 侧载包
-```bash
-git clone https://github.com/mak5er/AirCard-iOS.git
-cd AirCard-iOS
-./build-ipa.sh
-```
-编译完成的侧载包将输出至 `build/AirCard-iOS.ipa`。
-
-### 重新编译 Rust 核心框架
-若修改了 `rust-core` 中的 FFI 代码：
-```bash
-./build-ios.sh
-```
-
----
-
-## 📂 项目工程结构 (Repository Structure)
-
-```
-AirCard-iOS/
-├── ios-app/                   # SwiftUI 手机端应用程序
-│   ├── AirCardApp.swift       # 应用程序入口点与生命周期
-│   ├── AppViewModel.swift     # 状态管理与漏洞利用通道编排
-│   ├── ContentView.swift      # 主交互界面
-│   ├── TendiesView.swift      # PosterBoard 锁屏壁纸界面 (v1.3 新增)
-│   ├── TendiesEngine.swift    # Tendies 壁纸解包与容器注入引擎 (v1.3 新增)
-│   ├── RespringHelper.swift   # NeoSpring WebKit 崩溃注销实现 (v1.3 新增)
-│   ├── Models.swift           # 图像切片、主题布局、档案打包模型
-│   ├── PairingController.swift# Bonjour 主机自广播与配对记录同步
-│   ├── NetworkStatus.swift    # VPN 回环网络检测
-│   ├── Utilities.swift        # 后台保活与通用辅助函数
-│   ├── GrappaHelper.[h,m]     # ATC 协议签名与通信辅助
-│   ├── Info.plist             # Bundle 权限与配置
-│   └── Assets.xcassets/       # 图标与静态图像资产
-├── AirliftFFI.xcframework/    # 预编译 arm64 Rust 静态库与 C 头文件
-├── rust-core/                 # Rust 核心库源码 (AirTraffic 协议交互)
-├── project.yml                # XcodeGen 项目工程描述文件
-├── build-ipa.sh               # IPA 自动化打包构建脚本
-├── build-ios.sh               # Rust framework 构建脚本
-├── LICENSE                    # MIT 开源许可证
-└── README.md                  # 项目说明文档
-```
 
 ---
 
@@ -235,3 +199,4 @@ AirCard-iOS/
 - 下载中心：[https://aircardios.github.io/download.html](https://aircardios.github.io/download.html)
 - 教程中心：[https://aircardios.github.io/tutorial.html](https://aircardios.github.io/tutorial.html)
 - 卡面素材库：[https://aircardios.github.io/cards/index.html](https://aircardios.github.io/cards/index.html)
+- 官方社区：[https://aircardios.github.io/community.html](https://aircardios.github.io/community.html)
