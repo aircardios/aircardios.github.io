@@ -1,7 +1,7 @@
 /**
  * AirCard 中文官网 - 配置文件
  * 便于集中维护各端版本号、网盘真实下载链接、提取码及官方仓库地址
- * 
+ *
  * 💡 维护指南：
  * 后续有新版本发布或网盘链接变更时，只需在此处修改对应平台的 version、url 和 code，
  * 官网所有页面（首页、下载中心、下载弹窗）均会自动动态同步更新！
@@ -27,25 +27,25 @@ const AIR_CONFIG = {
       id: "ios",
       title: "AirCard-iOS",
       tag: "iOS 手机端 (无需电脑)",
-      version: "v1.2",
+      version: "v1.3",
       releaseDate: "2026-09",
       fileName: "AirCard-iOS.ipa",
       size: "~18.5 MB",
-      compatibility: "iOS 18 ~ 27",
-      desc: "iPhone 原生运行，借助 LocalDevVPN 本地回环与 AirTraffic 注入，脱离电脑随时改卡面与按键",
+      compatibility: "iOS 18 ~ 27+",
+      desc: "iPhone 原生运行，借助 LocalDevVPN 本地回环与 AirTraffic 注入，脱离电脑随时改卡面、锁屏按键及 PosterBoard 壁纸，集成 NeoSpring 免重启注销",
       sideloadTools: ["TrollStore (巨魔)", "SideStore", "AltStore", "LiveContainer", "爱思助手签名"],
       officialUrl: "https://github.com/mak5er/AirCard-iOS/releases",
       drives: {
         xunlei: {
           name: "迅雷网盘",
-          url: "https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=6edp#",
-          code: "6edp",
-          badge: "高速分流",
+          url: "https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#",
+          code: "bdzw",
+          badge: "官方分流",
           icon: "⚡"
         },
         guangya: {
           name: "光鸭网盘",
-          url: "https://www.guangyapan.com/s/1948387308566241285_aeWXEya0Twth-MDh",
+          url: "https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh",
           code: "",
           codeText: "免提取码",
           badge: "免登录直链",
@@ -53,10 +53,10 @@ const AIR_CONFIG = {
         },
         quark: {
           name: "夸克网盘",
-          url: "https://pan.quark.cn/s/c8454bb2e4f1",
+          url: "https://pan.quark.cn/s/b9034a60bff4",
           code: "",
           codeText: "无提取码",
-          badge: "推荐分流",
+          badge: "全量分流",
           icon: "⚡"
         }
       }

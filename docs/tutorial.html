@@ -266,6 +266,10 @@
           class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
           🔢 锁屏按键主题
         </a>
+        <a href="#tendies"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          🖼️ 锁屏壁纸 (.tendies)
+        </a>
         <a href="#setup-ios"
           class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
           📱 iOS 端免电脑配对
@@ -449,19 +453,66 @@
       </div>
     </section>
 
-    <!-- 教程 3：iOS 原生端 (免电脑) 配置指南 -->
+    <!-- 教程 3：PosterBoard 锁屏壁纸定制 (.tendies) 实战 [v1.3 新增] -->
+    <section id="tendies" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-emerald-600/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold">
+          3
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            PosterBoard 锁屏壁纸定制 (.tendies) 实战 (v1.3 新增)
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            突破 iOS 沙盒限制，直接将 <code>.tendies</code> 壁纸归档包注入系统 PosterBoard 存储，免重启生效
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 步骤 A -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">步骤一</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">导入 .tendies 归档包</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            在 AirCard-iOS 中切换至 <strong>Tendies (壁纸)</strong> 页面，点击选择文件，直接从系统自带“文件”App 中选取任意 <code>.tendies</code> 格式的锁屏壁纸归档包。App 内置解压引擎将自动解析资源。
+          </p>
+        </div>
+
+        <!-- 步骤 B -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">步骤二</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">智能容器匹配与注入</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            引擎自动检测当前设备上激活的 PosterBoard 壁纸描述符（Descriptor UUID）与存储容器，自动将壁纸资产与元数据精准注入系统壁纸沙盒目录。
+          </p>
+        </div>
+
+        <!-- 步骤 C -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 mb-2">步骤三</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">NeoSpring 免重启注销</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            写入完成后，内置 <strong>NeoSpring</strong> 模块将基于 WebKit GPU 进程崩溃机制自动触发轻量注销（Respring），**无需整机重启**即可让全新锁屏壁纸立刻展现在屏幕上！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 4：iOS 原生端 (免电脑) 配置指南 -->
     <section id="setup-ios" class="scroll-mt-24">
       <div class="flex items-center gap-3 mb-6">
         <span
           class="w-10 h-10 rounded-xl bg-indigo-600/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl font-bold">
-          3
+          4
         </span>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
             AirCard-iOS 手机原生端 (免电脑) 配置全流程
           </h2>
           <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
-            脱离数据线与电脑限制，随时随地在 iPhone 上一键修改卡面与锁屏主题
+            脱离数据线与电脑限制，随时随地在 iPhone 上一键修改卡面、按键与壁纸
           </p>
         </div>
       </div>
@@ -505,7 +556,7 @@
             <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
               <strong class="text-slate-900 dark:text-white">步骤 B：开发者模式配对授权</strong>
               <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                在 iPhone 前往 <strong>“设置 ➔ 隐私与安全性 ➔ 开发者模式”</strong>，点击 <strong>“与 AirCard-iOS 配对”</strong> 并确认授权。
+                在 iPhone 前往 <strong>“设置 ➔ 隐私与安全性 ➔ 开发者模式”</strong>，点击 <strong>“与 AirCard-iOS 配对”</strong> 并确认授权（借助 Bonjour 广播实现端侧免电脑自配对）。
               </p>
             </div>
           </div>
@@ -513,12 +564,12 @@
       </div>
     </section>
 
-    <!-- 教程 4：macOS 与 Windows 电脑端使用指引 -->
+    <!-- 教程 5：macOS 与 Windows 电脑端使用指引 -->
     <section id="setup-desktop" class="scroll-mt-24">
       <div class="flex items-center gap-3 mb-6">
         <span
           class="w-10 h-10 rounded-xl bg-emerald-600/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold">
-          4
+          5
         </span>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
@@ -576,12 +627,12 @@
       </div>
     </section>
 
-    <!-- 教程 5：快照还原与一键重置 -->
+    <!-- 教程 6：快照还原与一键重置 -->
     <section id="restore" class="scroll-mt-24">
       <div class="flex items-center gap-3 mb-6">
         <span
           class="w-10 h-10 rounded-xl bg-amber-600/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-bold">
-          5
+          6
         </span>
         <div>
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
@@ -743,7 +794,7 @@
       <div class="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-5 text-xs font-semibold">
         <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all bg-brand-600 text-white shadow-sm"
           data-modal-tab="ios">
-          📱 iOS (<span data-bind-version="ios">v1.2</span>)
+          📱 iOS (<span data-bind-version="ios">v1.3</span>)
         </button>
         <button
           class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
@@ -760,9 +811,9 @@
       <!-- 面板 1: iOS 网盘通道 -->
       <div id="modal-pane-ios" class="modal-platform-pane space-y-3">
         <div class="flex items-center justify-between px-1 text-xs text-slate-500 dark:text-slate-400">
-          <span>AirCard-iOS (无需电脑 · 支持 iOS 18~27)</span>
+          <span>AirCard-iOS (无需电脑 · 支持 iOS 18~27+)</span>
           <span class="font-bold text-brand-600 dark:text-brand-400">最新版 <span
-              data-bind-version="ios">v1.2</span></span>
+              data-bind-version="ios">v1.3</span></span>
         </div>
 
         <!-- 迅雷 -->
@@ -774,13 +825,13 @@
             </span>
             <div class="flex items-center gap-1 text-xs font-mono text-slate-600 dark:text-slate-300">
               <span>提取码: <strong class="text-brand-600 dark:text-brand-400"
-                  data-code-display="ios-xunlei">6edp</strong></span>
+                  data-code-display="ios-xunlei">bdzw</strong></span>
               <button
                 class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 font-sans shadow-sm"
-                data-copy-text="6edp" data-code-copy="ios-xunlei">复制</button>
+                data-copy-text="bdzw" data-code-copy="ios-xunlei">复制</button>
             </div>
           </div>
-          <a href="https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=6edp#" target="_blank" rel="noopener"
+          <a href="https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#" target="_blank" rel="noopener"
             data-platform="ios" data-drive="xunlei"
             class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all">
             前往迅雷网盘下载 AirCard-iOS
@@ -798,7 +849,7 @@
               class="text-[11px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold"
               data-code-display="ios-guangya">免提取码</span>
           </div>
-          <a href="https://www.guangyapan.com/s/1948387308566241285_aeWXEya0Twth-MDh" target="_blank" rel="noopener"
+          <a href="https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh" target="_blank" rel="noopener"
             data-platform="ios" data-drive="guangya"
             class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
             前往光鸭网盘直链下载
@@ -816,7 +867,7 @@
               class="text-[11px] px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-semibold"
               data-code-display="ios-quark">无提取码</span>
           </div>
-          <a href="https://pan.quark.cn/s/c8454bb2e4f1" target="_blank" rel="noopener" data-platform="ios"
+          <a href="https://pan.quark.cn/s/b9034a60bff4" target="_blank" rel="noopener" data-platform="ios"
             data-drive="quark"
             class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all">
             前往夸克网盘下载
@@ -847,7 +898,7 @@
                 data-copy-text="9sns" data-code-copy="windows-xunlei">复制</button>
             </div>
           </div>
-          <a href="https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=9sns#" target="_blank" rel="noopener"
+          <a href="https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#" target="_blank" rel="noopener"
             data-platform="windows" data-drive="xunlei"
             class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all">
             前往迅雷网盘下载 aircard.exe
