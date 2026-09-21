@@ -200,8 +200,9 @@ function initClipboardHandlers() {
       const textToCopy = btn.getAttribute("data-copy-text");
       if (!textToCopy) return;
 
+      const msg = btn.getAttribute("data-copy-msg") || (btn.getAttribute("data-copy-label") ? `已复制${btn.getAttribute("data-copy-label")}: ${textToCopy}` : `已复制: ${textToCopy}`);
       navigator.clipboard.writeText(textToCopy).then(() => {
-        showToast(`已复制提取码: ${textToCopy}`);
+        showToast(msg);
         const originalText = btn.textContent;
         btn.textContent = "✓ 已复制";
         setTimeout(() => {
@@ -300,6 +301,17 @@ function populateDynamicConfig() {
   if (cfg.resourcePack && cfg.resourcePack.url) {
     const resourceLinks = document.querySelectorAll(".resource-pack-link");
     resourceLinks.forEach(el => el.href = cfg.resourcePack.url);
+  }
+
+  // 4. 官方社区链接与群号动态同步
+  if (cfg.community) {
+    if (cfg.community.joinUrl) {
+      document.querySelectorAll(".community-join-link").forEach(el => el.href = cfg.community.joinUrl);
+    }
+    if (cfg.community.qqGroup) {
+      document.querySelectorAll(".community-qq-group").forEach(el => el.textContent = cfg.community.qqGroup);
+      document.querySelectorAll(".community-qq-copy").forEach(el => el.setAttribute("data-copy-text", cfg.community.qqGroup));
+    }
   }
 }
 

@@ -144,6 +144,15 @@ const AIR_CONFIG = {
     title: "AirCard 美化扩展大礼包 (50+ 套锁屏主题 & 高清卡面模板)",
     desc: "精选热门 .passthm 锁屏数字按键主题包、Apple Wallet 1536×969 高清 PSD/PNG 卡面模版，以及交通卡 Suica 专属矢量样式。",
     url: "https://pan.quark.cn/s/c8454bb2e4f1" // 夸克网盘
+  },
+
+  // 官方玩家社区与交流群配置
+  community: {
+    qqGroup: "1006363010",
+    groupName: "AirCard & 交互壁纸交流群",
+    description: "免越狱玩机、Apple Pay 钱包卡面美化、锁屏按键与壁纸技术交流群",
+    joinUrl: "https://qm.qq.com/q/5u0IuzGdnW", // 网页点击一键加群通道
+    qrUrl: "https://qm.qq.com/q/RthOcegrim"    // 手机扫码专用加群通道
   }
 };
 

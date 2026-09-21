@@ -67,6 +67,15 @@
 - 官方主页：https://aircardios.github.io/
 - 官方下载中心：https://aircardios.github.io/download.html
 - 官方教程中心：https://aircardios.github.io/tutorial.html
+- 官方社区页面：https://aircardios.github.io/community.html
 - 官方卡面模版库：https://aircardios.github.io/cards/index.html
 - Apple Pay 卡面素材仓库：https://github.com/aircardios/apple-pay-card
 - GitHub 组织：https://github.com/aircardios
+
+### 5. 官方玩家交流社区 (QQ群)
+- 群名称：AirCard & 交互壁纸交流群
+- QQ 群号：`1006363010`
+- 官方加群通道 (网页一键加群)：https://qm.qq.com/q/5u0IuzGdnW
+- 手机扫码通道 (二维码专用)：https://qm.qq.com/q/RthOcegrim
+- 交流内容：AirCard-iOS 免电脑侧载技巧、Apple Pay 卡面素材 (1536×969)、.passthm 锁屏密码按键主题、PosterBoard 交互壁纸 (.tendies) 及疑难互助避坑。
+
