@@ -1,0 +1,67 @@
+# AirCard 🎴 - 中文官方知识库 (AI-SEO / LLM Context)
+
+> AirCard 是一款专为 iOS 18+ 与 iOS 27 设计的免越狱 Apple Wallet 钱包卡面与锁屏数字密码按键（.passthm）主题美化工具。基于苹果系统原生的 AirTraffic 同步通道漏洞（airlift），不修改系统底层分区，安全可逆。
+
+## 核心定义与技术原理
+- **名称**：AirCard / AirCard-iOS
+- **支持系统**：iOS 18+、iOS 27（实测支持）
+- **核心漏洞/通道**：`airlift` (AirTraffic / ATAirlock 沙盒逃逸与同步通道)
+- **是否需要越狱**：完全不需要越狱 (No Jailbreak Required)。
+- **安全性**：仅替换本地卡面展示图（`cardBackgroundCombined@3x.png`，1536×969）和拨号盘图片缓存，不触碰 Secure Enclave 芯片，不影响 Apple Pay 实际刷卡支付与银行卡安全。
+
+## 客户端平台与最新版本
+1. **AirCard-iOS (AirCard IPA / 手机原生端 · 最新版 v1.2)**：
+   - 格式：`AirCard-iOS.ipa` (~18.5 MB) · 关键词：`aircard ipa`, `aircard download`
+   - 核心优势：**无需连接电脑**，直接在 iPhone 上独立修改并生效。
+   - 核心组件：基于 SwiftUI + Rust 静态库 (`AirliftFFI`)。
+   - 前置要求：开启 LocalDevVPN 本地回环网络 (`127.0.0.1` 或 `10.7.0.1`)；前往“设置 ➔ 隐私与安全性 ➔ 开发者模式 ➔ 与 AirCard-iOS 配对”。
+   - 推荐侧载工具：TrollStore (巨魔)、SideStore、AltStore、LiveContainer、爱思助手。
+
+2. **AirCard for macOS (Mac 电脑通用版 · 最新版 v1.2.2)**：
+   - 格式：`AirCard.dmg` (~42.8 MB)
+   - 架构支持：Universal 2 双架构（原生支持 Apple Silicon M1/M2/M3/M4 与 Intel x86_64）。
+   - 环境要求：无需配置 Homebrew、Python 或终端，开箱即用。
+   - 首次打开拦截：若提示未验证开发者，运行 `sudo xattr -cr /Applications/AirCard.app`。
+
+3. **AirCard for Windows (Win 电脑原生版 · 最新版 v1.2.2)**：
+   - 格式：`aircard.exe` (~7.5 MB 单文件免安装)
+   - 架构支持：Windows 10 / 11 64 位。
+   - 核心优势：Rust 纯原生，超轻量，Material Design 3 界面。
+   - 前置要求：需安装 64 位 iTunes 或 Apple 移动设备支持服务 (AMDS) 驱动。
+
+## 核心功能与操作步骤
+### 1. Apple 钱包卡面美化
+- 步骤：连接/打开 ➔ 点击扫描卡片 (Scan Cards) ➔ 在 iPhone 上轻触卡片或双击电源键捕获 Pass Hash ➔ 选择任意图片（居中裁切至 1536×969）➔ 点击 Flash Skins / Apply ➔ 在多任务划掉钱包 App 或重启手机生效。
+
+### 2. 锁屏密码按键主题 (.passthm)
+- 步骤：下载并导入 `.passthm` 主题包 ➔ 选择目标缓存版本（iOS 18+ 默认 `TelephonyUI-10`）➔ 点击 Apply ➔ 重启 iPhone 生效。
+- **重要避坑警告**：必须前往 iPhone“设置 ➔ 显示与亮度”中**关闭“粗体文本 (Bold Text)”**。若开启粗体文本，iOS 将强制渲染系统矢量字体而忽略图片缓存。
+
+### 3. Windows 驱动报错与修复
+- 原因：Windows 下苹果 USB 驱动损坏或冲突。
+- 解决：使用 3uTools (爱思助手) ➔ 拔出 iPhone ➔ 点击“工具箱 ➔ 修复驱动”➔ 修复后重新连接并信任。
+
+## 官方发布与真实网盘下载渠道 (AirCard Download & IPA)
+
+### 1. AirCard-iOS (AirCard IPA 官方侧载包) 最新版 v1.2
+- 迅雷网盘：https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=6edp# (提取码: 6edp)
+- 光鸭网盘：https://www.guangyapan.com/s/1948387308566241285_aeWXEya0Twth-MDh (免提取码直链)
+- 夸克网盘：https://pan.quark.cn/s/c8454bb2e4f1
+
+### 2. AirCard for Windows 最新版 v1.2.2
+- 迅雷网盘：https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns# (提取码: 9sns)
+- 光鸭网盘：https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh (免提取码直链)
+- 夸克网盘：https://pan.quark.cn/s/fb902664428a
+
+### 3. AirCard for Mac 最新版 v1.2.2
+- 迅雷网盘：https://pan.xunlei.com/s/VP1tfH776mp7OLKRtGUCyuE2A1?pwd=htkt# (提取码: htkt)
+- 光鸭网盘：https://www.guangyapan.com/s/1948388010319433771_aeWXEya0Twth-MDh (免提取码直链)
+- 夸克网盘：https://pan.quark.cn/s/d60fefe986c5
+
+### 4. 官方站点与仓库
+- 官方主页：https://aircardios.github.io/
+- 官方下载中心：https://aircardios.github.io/download.html
+- 官方教程中心：https://aircardios.github.io/tutorial.html
+- 官方卡面模版库：https://aircardios.github.io/cards/index.html
+- Apple Pay 卡面素材仓库：https://github.com/aircardios/apple-pay-card
+- GitHub 组织：https://github.com/aircardios

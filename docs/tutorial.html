@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AirCard 🎴 官方使用教程中心 - 免越狱 Apple 钱包卡面与锁屏按键美化指引 (AirCard IPA / Download)</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99TQD75VX7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-99TQD75VX7');
+  </script>
+
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+      t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, "clarity", "script", "ykpa66ih38");
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="AirCard 官方图文使用教程与排障中心。详尽指导免越狱为 iOS 18+ 与 iOS 27 自定义 Apple Pay 钱包卡面（1536×969）、锁屏按键主题 (.passthm)、关闭粗体文本避坑要点，以及 iPhone 原生端 AirCard IPA 侧载与 LocalDevVPN 配置、macOS 与 Windows 客户端全流程指引。">
+  <meta name="keywords"
+    content="aircard ipa, aircard download, AirCard 教程, AirCard 使用方法, Apple 钱包卡面教程, Apple Pay 改卡面, 锁屏按键主题教程, .passthm 教程, iOS 18 美化教程, LocalDevVPN 配置, aircard 粗体文本, 免越狱教程">
+  <meta name="author" content="AirCard iOS">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aircardios.github.io/tutorial.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎴</text></svg>">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="AirCard 🎴 中文官网">
+  <meta property="og:title" content="AirCard 官方使用教程中心 - 免越狱 iOS 18+ 钱包卡面与锁屏按键定制图文指引">
+  <meta property="og:description" content="手把手教你免越狱玩转 Apple 钱包卡面定制与锁屏 .passthm 按键主题，含三端原生客户端配置与高能避坑排障。">
+  <meta property="og:url" content="https://aircardios.github.io/tutorial.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AirCard 官方使用教程中心 - 免越狱 iOS 18+ 钱包卡面与锁屏按键定制">
+  <meta name="twitter:description" content="手把手教你免越狱玩转 Apple 钱包卡面定制与锁屏 .passthm 按键主题，含三端原生客户端配置与高能避坑排障。">
+
+  <!-- AI-SEO / GEO 结构化数据 (JSON-LD: HowTo & WebPage) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://aircardios.github.io/tutorial.html#webpage",
+        "url": "https://aircardios.github.io/tutorial.html",
+        "name": "AirCard 官方使用教程中心",
+        "description": "免越狱 iOS 18+ Apple 钱包卡面与锁屏数字密码按键主题完整图文使用指引",
+        "inLanguage": "zh-CN",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://aircardios.github.io/#website",
+          "name": "AirCard 中文官网",
+          "url": "https://aircardios.github.io/"
+        }
+      },
+      {
+        "@type": "HowTo",
+        "name": "如何使用 AirCard 自定义 Apple 钱包卡面",
+        "description": "通过 AirCard 免越狱为 Apple Pay / 钱包卡片赋予自定义个性化外观",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "连接设备并捕获卡片 Hash",
+            "text": "打开客户端，点击 Scan Cards，在手机上双击电源键展示卡片即可秒级捕捉 Pass Hash。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "选择并裁剪卡面图片",
+            "text": "选择或拖入图片，程序自动适配居中裁切至 1536×969 高清分辨率。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "写入并刷新生效",
+            "text": "点击 Flash / Apply 写入系统缓存，划掉多任务中的钱包 App 或重启手机生效。"
+          }
+        ]
+      },
+      {
+        "@type": "HowTo",
+        "name": "如何应用 iOS 18+ 锁屏按键主题 (.passthm)",
+        "description": "在无需越狱的情况下为 iPhone 锁屏密码按键更换个性化主题",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "关闭系统粗体文本",
+            "text": "在 iPhone 设置 ➔ 显示与亮度中关闭粗体文本（Bold Text），此为按键主题生效的关键前置。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "导入 .passthm 主题包",
+            "text": "在 AirCard 中导入主题包，选择系统对应版本 TelephonyUI-10。"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "写入缓存并重启手机",
+            "text": "点击 Apply Passcode Theme 写入，完成后重启 iPhone 即可体验全新锁屏按键。"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- 防白屏/闪烁主题预载脚本 -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- TailwindCSS Play CDN & 科技蓝调色板配置 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+              950: '#172554',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Segoe UI"', 'Roboto', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'sans-serif'],
+            mono: ['"SF Mono"', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- 自定义 3D 视差与微交互增强样式 -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- 全局配置预载 -->
+  <script src="js/config.js"></script>
+</head>
+
+<body
+  class="bg-slate-50 dark:bg-[#090d16] text-slate-800 dark:text-slate-100 font-sans antialiased min-h-screen relative overflow-x-hidden transition-colors duration-300">
+
+  <!-- 科技微光背景光斑 -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-ambient-light dark:bg-ambient-dark"></div>
+
+  <!-- 顶部导航栏 -->
+  <header
+    class="sticky top-0 z-50 w-full bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- 品牌 Logo -->
+      <a href="index.html" class="flex items-center gap-3 group text-slate-900 dark:text-white">
+        <div
+          class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-xl text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+          🎴
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-bold tracking-tight">AirCard</span>
+          <span
+            class="text-xs font-semibold px-2 py-0.5 rounded-full bg-cyan-100 dark:bg-cyan-950 text-cyan-700 dark:text-cyan-300 border border-cyan-200 dark:border-cyan-800">
+            教程中心
+          </span>
+        </div>
+      </a>
+
+      <!-- 导航链接 (桌面端) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
+        <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
+        <a href="tutorial.html" class="text-brand-600 dark:text-brand-400 font-bold transition-colors">使用教程</a>
+        <a href="download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+        <a href="#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">常见问题</a>
+      </nav>
+
+      <!-- 导航功能操作区 -->
+      <div class="flex items-center gap-3">
+        <!-- 亮暗模式切换按钮 -->
+        <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
+          class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
+          <span id="themeIcon"></span>
+        </button>
+
+        <!-- 立即下载 CTA -->
+        <a href="download.html"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 hover:shadow-brand-600/40 transition-all">
+          <span>⬇️ 立即下载</span>
+        </a>
+
+        <!-- 移动端汉堡菜单 -->
+        <button
+          class="md:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端抽屉菜单 -->
+    <div id="mobileMenu"
+      class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+      <a href="index.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官网首页</a>
+      <a href="cards/index.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版库</a>
+      <a href="tutorial.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-brand-600 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/40 font-bold">使用教程</a>
+      <a href="download.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">下载中心</a>
+      <a href="#faq"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">常见问题</a>
+      <a href="download.html"
+        class="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-600 text-white shadow-md">
+        极速下载客户端
+      </a>
+    </div>
+  </header>
+
+  <!-- 教程页面 Hero 标头 -->
+  <section class="pt-12 pb-16 lg:pt-16 lg:pb-20 border-b border-slate-200/80 dark:border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <div
+        class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 mb-5">
+        <span>📖 官方权威使用指引 · 免越狱 iOS 18+ / iOS 27 深度实战</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+        AirCard <span class="bg-gradient-to-r from-brand-600 to-cyan-500 bg-clip-text text-transparent">全平台实战教程</span>
+      </h1>
+
+      <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 mt-4 leading-relaxed">
+        手把手指引 Apple 钱包卡面自定义渲染、iOS 18+ 锁屏数字密码主题 (.passthm) 替换，以及 iPhone 手机端免电脑、macOS、Windows 三大平台环境配对与高能避坑技巧。
+      </p>
+
+      <!-- 快速锚点胶囊导航 -->
+      <div class="flex flex-wrap justify-center items-center gap-2.5 mt-8 text-xs sm:text-sm">
+        <a href="#wallet"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          💳 Apple 钱包卡面
+        </a>
+        <a href="#passcode"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-cyan-500 dark:hover:border-cyan-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          🔢 锁屏按键主题
+        </a>
+        <a href="#setup-ios"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          📱 iOS 端免电脑配对
+        </a>
+        <a href="#setup-desktop"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          💻 macOS / Windows 指南
+        </a>
+        <a href="#restore"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          🔄 快照还原与重置
+        </a>
+        <a href="#faq"
+          class="px-3.5 py-1.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-brand-500 dark:hover:border-brand-400 text-slate-700 dark:text-slate-300 transition-all shadow-sm">
+          ❓ 疑难排障 (FAQ)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+    <!-- 教程 1：Apple 钱包卡面定制实战 -->
+    <section id="wallet" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-brand-600/10 dark:bg-brand-500/20 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl font-bold">
+          1
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            Apple 钱包 (Apple Pay) 卡面定制实战
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            突破 Apple Pay 卡面限制，为银行卡、交通卡（Suica、八达通、全国一卡通）赋予个性化视觉
+          </p>
+        </div>
+      </div>
+
+      <!-- 技术原理与安全保障卡片 -->
+      <div
+        class="mb-8 p-5 rounded-2xl bg-gradient-to-r from-brand-50/60 to-cyan-50/60 dark:from-brand-950/30 dark:to-cyan-950/30 border border-brand-200/80 dark:border-brand-800/60">
+        <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl">🛡️</span>
+            <div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-white">为什么免越狱且绝对安全？</h3>
+              <p class="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                AirCard 仅通过苹果原生的 AirTraffic 同步通道替换系统本地缓存中的卡面展示图片（<code>cardBackgroundCombined@3x.png</code> 等）。绝不触碰 Secure Enclave 安全芯片，不改变卡号及凭据，Apple Pay 刷卡消费完全不受影响！
+              </p>
+            </div>
+          </div>
+          <div class="shrink-0 text-xs font-mono font-bold px-3 py-1.5 rounded-lg bg-white dark:bg-slate-900 border border-brand-200 dark:border-brand-800 text-brand-600 dark:text-brand-400">
+            推荐分辨率: 1536 × 969 px
+          </div>
+        </div>
+      </div>
+
+      <!-- 步骤分解网格 -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Step 1 -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">第一步</span>
+              <span class="text-2xl">📡</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">连接与扫卡识别</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              打开 AirCard（iOS 原生端确保已连接回环，电脑端连接数据线信任手机），点击 <strong>Scan Cards (扫描卡片)</strong>。在 iPhone 上双击电源键打开 Apple Pay 页面，轻触目标卡片，程序将秒级抓取独一无二的 Pass Hash。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500">
+            💡 提示：若有多张卡片，依次轻触切换即可全量识别。
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">第二步</span>
+              <span class="text-2xl">🎨</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">选择卡面并微调</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              点击卡片预览框，或直接拖拽你喜爱的图片至窗口。AirCard 内置智能居中算法，会自动将图像缩放裁切为标准 <strong>1536×969</strong> 比例，同时生成 Retina @2x 与 @3x 对应层级的高清纹理。
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500">
+            💡 提示：支持 PNG、JPG、WEBP 格式，黑金、赛博朋克或极简渐变效果最佳。
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-7 shadow-sm hover:shadow-md transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">第三步</span>
+              <span class="text-2xl">⚡</span>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">写入缓存与刷新生效</h3>
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              点击 <strong>Flash Skins</strong> 或 <strong>Apply</strong> 按钮，等待进度条完成写入。写入成功后，从屏幕底部上滑呼出 iPhone 多任务后台，<strong>彻底向上划掉“钱包 (Wallet)”App</strong>，再次打开即可看到全新震撼卡面！
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500">
+            💡 提示：若卡面未立即刷新，重启一次手机即可清空旧显存。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 2：锁屏数字密码按键主题 (.passthm) 实战 -->
+    <section id="passcode" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-cyan-600/10 dark:bg-cyan-500/20 text-cyan-600 dark:text-cyan-400 flex items-center justify-center text-xl font-bold">
+          2
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            锁屏数字密码按键主题 (.passthm) 教程
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            替换 iOS 18+ 默认灰底数字键盘，应用热门 Cowabunga / Nugget 格式锁屏按键皮肤
+          </p>
+        </div>
+      </div>
+
+      <!-- 核心避坑红牌警示卡片 -->
+      <div
+        class="mb-8 p-6 rounded-2xl bg-rose-50/90 dark:bg-rose-950/50 border-2 border-rose-300 dark:border-rose-700 text-rose-900 dark:text-rose-200 shadow-md">
+        <div class="flex items-start gap-3.5">
+          <span class="text-3xl">🚨</span>
+          <div class="space-y-2">
+            <h3 class="text-base sm:text-lg font-extrabold text-rose-950 dark:text-rose-100">
+              最高频避坑警示：锁屏按键主题生效必须关闭“粗体文本”！
+            </h3>
+            <p class="text-xs sm:text-sm text-rose-800 dark:text-rose-200 leading-relaxed">
+              99% 的用户反馈“写入成功但重启后仍是默认数字”均是因为开启了系统粗体。
+              请立即前往 iPhone <strong>“设置 ➔ 显示与亮度”</strong>，确保 <strong>“粗体文本 (Bold Text)” 处于【关闭】状态</strong>！
+              开启粗体文本时，iOS 将强制跳过本地图形缓存而由系统矢量引擎重新绘制默认字形。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 步骤流程 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- 步骤 A -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">步骤一</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">获取 .passthm 主题文件</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <code>.passthm</code> 是 iOS 社区通用的锁屏主题包格式。你可以从本站网盘的精选资源包下载、从 GitHub 社区获取，或通过切片工具自行制作。
+          </p>
+        </div>
+
+        <!-- 步骤 B -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">步骤二</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">导入主题与版本选择</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            在 AirCard 客户端中将 <code>.passthm</code> 文件导入。在系统版本选项中，iOS 18+ 用户请保持默认选择 <strong>Auto / TelephonyUI-10</strong>（iOS 18/27 统一使用的拨号渲染层）。
+          </p>
+        </div>
+
+        <!-- 步骤 C -->
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <div class="text-xs font-bold uppercase tracking-wider text-cyan-600 dark:text-cyan-400 mb-2">步骤三</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">写入并重启 iPhone</h3>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            点击 <strong>Apply Passcode Theme</strong>。提示 Success 写入完成后，<strong>必须完整重启你的 iPhone</strong>（长按电源键+音量键关机后再开机），开机点亮锁屏即可看到全新按键！
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 3：iOS 原生端 (免电脑) 配置指南 -->
+    <section id="setup-ios" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-indigo-600/10 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-400 flex items-center justify-center text-xl font-bold">
+          3
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            AirCard-iOS 手机原生端 (免电脑) 配置全流程
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            脱离数据线与电脑限制，随时随地在 iPhone 上一键修改卡面与锁屏主题
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- 左侧：安装与侧载 -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+            <span>📦</span> 1. AirCard IPA 安装包下载与侧载方式
+          </h3>
+          <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+            <p>
+              前往本站 <a href="download.html#ios" class="text-brand-600 dark:text-brand-400 font-semibold underline">AirCard Download & IPA 下载中心</a> 获取 <code>AirCard-iOS.ipa</code> 官方最新安装包。主流侧载工具指引：
+            </p>
+            <ul class="list-disc pl-5 space-y-2">
+              <li><a href="guides/trollstore.html" class="font-bold text-slate-900 dark:text-white hover:text-brand-600 underline">TrollStore (巨魔商店) 永久安装 AirCard IPA</a>：永久免签、免电脑、权限完整最推荐。</li>
+              <li><a href="guides/sidestore.html" class="font-bold text-slate-900 dark:text-white hover:text-brand-600 underline">SideStore 免电脑自签安装 AirCard IPA</a>：iOS 18+ 首选，手机端在线自签与刷新。</li>
+              <li><a href="guides/altstore.html" class="font-bold text-slate-900 dark:text-white hover:text-brand-600 underline">AltStore 侧载 AirCard IPA 教程</a>：局域网 WiFi 无线静默续签。</li>
+              <li><a href="guides/i4tools.html" class="font-bold text-slate-900 dark:text-white hover:text-brand-600 underline">爱思助手一键签名安装 AirCard IPA</a>：数据线直连电脑，图形化一键完成。</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 右侧：LocalDevVPN 与开发者配对 -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+            <span>🔌</span> 2. LocalDevVPN 本地回环与开发者模式配对
+          </h3>
+          <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+            <p>
+              因为 AirCard-iOS 需要在手机内模拟电脑端的 AirTraffic 握手通道，需要以下两步前置准备：
+            </p>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <strong class="text-slate-900 dark:text-white">步骤 A：保持 LocalDevVPN 开启</strong>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                开启本地回环路由（目标地址 <code>127.0.0.1</code> 或 <code>10.7.0.1</code>）。它只在手机内部回环转发数据，不走任何外网，完全不消耗流量。
+              </p>
+            </div>
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/60">
+              <strong class="text-slate-900 dark:text-white">步骤 B：开发者模式配对授权</strong>
+              <p class="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                在 iPhone 前往 <strong>“设置 ➔ 隐私与安全性 ➔ 开发者模式”</strong>，点击 <strong>“与 AirCard-iOS 配对”</strong> 并确认授权。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 4：macOS 与 Windows 电脑端使用指引 -->
+    <section id="setup-desktop" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-emerald-600/10 dark:bg-emerald-500/20 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold">
+          4
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            macOS 与 Windows 电脑端配置与避坑
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            桌面端适合大批量图片预处理、海报精准无缝九宫格切片与高级主题微调
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- macOS -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span>🍎</span> macOS (Universal 2 DMG)
+            </h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-mono">
+              M系列 + Intel 通用
+            </span>
+          </div>
+          <div class="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>1. <strong>安装简单</strong>：打开下载的 <code>AirCard.dmg</code>，将 <code>AirCard.app</code> 拖入“应用程序”即可。</p>
+            <p>2. <strong>连接手机</strong>：使用原装或 MFi 认证数据线连接 iPhone 至 Mac，在 iPhone 屏幕上点击<strong>“信任此电脑”</strong>并输入锁屏密码。</p>
+            <div class="p-3.5 rounded-xl bg-amber-50/70 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/60 text-xs text-amber-900 dark:text-amber-200">
+              <strong>⚠️ Gatekeeper 拦截提示“无法验证开发者”？</strong><br>
+              在访达“应用程序”中右键点击 <code>AirCard.app</code> ➔ 选择“打开”；或在终端执行一行命令解除隔离：<br>
+              <code class="font-mono bg-white dark:bg-slate-900 px-2 py-1 rounded mt-1.5 inline-block text-brand-600 dark:text-brand-400">sudo xattr -cr /Applications/AirCard.app</code>
+            </div>
+          </div>
+        </div>
+
+        <!-- Windows -->
+        <div
+          class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span>🪟</span> Windows (Rust 原生 EXE)
+            </h3>
+            <span class="text-xs px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-mono">
+              ~7.5 MB 单文件免安装
+            </span>
+          </div>
+          <div class="space-y-3 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p>1. <strong>绿色便携</strong>：直接运行 <code>aircard.exe</code>，无任何臃肿依赖。</p>
+            <p>2. <strong>前置驱动要求</strong>：Windows 需安装 <strong>64 位 iTunes</strong> 或 <strong>Apple 移动设备支持服务 (AMDS)</strong> 官方驱动通道。</p>
+            <div class="p-3.5 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-200/80 dark:border-blue-800/60 text-xs text-blue-900 dark:text-blue-200">
+              <strong>🔧 提示“设备未连接 / 无法同步 AirTraffic”？</strong><br>
+              这是 Win 平台最常见的 Apple USB 驱动冲突。只需打开 <strong>爱思助手 (3uTools)</strong> ➔ 拔出手机 ➔ 点击<strong>“工具箱 ➔ 修复驱动 ➔ 立即修复”</strong>。修复后重新插入手机信任即可百分之百解决！
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 5：快照还原与一键重置 -->
+    <section id="restore" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-amber-600/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-bold">
+          5
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            快照还原与一键恢复默认
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            随时无损复原官方原始外观，零风险放心体验
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span>💳</span> 如何恢复 Apple Pay 原始银行卡面？
+          </h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li><strong>方式一 (App 内一键还原)</strong>：在 AirCard 客户端中，选中对应卡片，点击 <strong>Restore / 还原默认</strong> 按钮并写入，再彻底划掉钱包 App。</li>
+            <li><strong>方式二 (重新添加卡片)</strong>：在系统“钱包”中将卡片移除，重新绑定添加该卡，苹果官方服务器会自动重新下发原始发卡行卡面图片。</li>
+          </ul>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h3 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span>🔢</span> 如何恢复系统默认锁屏数字按键？
+          </h3>
+          <ul class="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+            <li><strong>方式一 (清除按键主题)</strong>：在 AirCard 的 Passcode 页面中点击 <strong>Clear Theme / 清除缓存</strong>，完成后重启 iPhone。</li>
+            <li><strong>方式二 (开关粗体文本)</strong>：在“设置 ➔ 显示与亮度”中开启一次“粗体文本”再关闭，或直接重启手机，系统会自动重新生成默认拨号图标。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教程 6：疑难排障与常见问题 (FAQ) -->
+    <section id="faq" class="scroll-mt-24">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="w-10 h-10 rounded-xl bg-purple-600/10 dark:bg-purple-500/20 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xl font-bold">
+          6
+        </span>
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+            疑难排障与常见问答 (FAQ)
+          </h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400 mt-0.5">
+            整理中文用户在实践过程中最高频的疑问与排障手段
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span class="text-brand-600 dark:text-brand-400">❓</span> 为什么写入锁屏按键主题后，屏幕依然显示系统默认字体？
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            最常见的原因是开启了系统<strong>“粗体文本”</strong>。请打开 iPhone 的<strong>“设置 ➔ 显示与亮度”</strong>，务必将<strong>“粗体文本 (Bold Text)”关闭</strong>。开启粗体后，iOS 会跳过图形缓存直接由系统渲染矢量字形。
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span class="text-brand-600 dark:text-brand-400">❓</span> 使用 AirCard 会导致封号或影响 Apple Pay 支付吗？
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            不会。AirCard 仅仅替换了 iOS 本地系统缓存中的卡面展示图片（<code>cardBackgroundCombined@3x.png</code> 等）以及拨号盘图形缓存，并没有触碰底层 Secure Enclave 安全芯片或篡改银行卡实际凭据。Apple Pay 的刷卡支付和安全验证完全不受任何影响。
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span class="text-brand-600 dark:text-brand-400">❓</span> Windows 提示设备未连接或 AirTraffic 同步失败？
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            这是 Windows 环境下最常见的问题，由于苹果驱动被篡改或损坏。请安装 <strong>3uTools (爱思助手)</strong>，拔出数据线，点击<strong>“工具箱 ➔ 修复驱动 ➔ 立即修复”</strong>，修复完成后重新插入手机信任即可。
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm">
+          <h4 class="text-base font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+            <span class="text-brand-600 dark:text-brand-400">❓</span> AirCard-iOS 手机端提示配对失败或无法连接回环？
+          </h4>
+          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            请确认已在后台保持开启 <strong>LocalDevVPN</strong>，回环地址指向 <code>127.0.0.1</code> 或 <code>10.7.0.1</code>。接着前往“设置 ➔ 隐私与安全性 ➔ 开发者模式”，点击“与 AirCard-iOS 配对”确认授权。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 底部下载行动呼吁 (CTA) -->
+    <section
+      class="rounded-3xl bg-gradient-to-br from-brand-600 to-cyan-600 p-8 sm:p-12 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <h3 class="text-2xl sm:text-3xl font-extrabold">准备好打造专属 iOS 个性化界面了吗？</h3>
+        <p class="text-brand-100 mt-2 text-sm sm:text-base max-w-xl">
+          支持国内网盘高速直链下载（迅雷、光鸭、夸克分流），免配置免越狱，立即开启全新美化体验！
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center gap-4 shrink-0">
+        <a href="download.html"
+          class="px-6 py-3 rounded-full text-brand-700 bg-white hover:bg-brand-50 font-bold shadow-md transition-all">
+          前往下载中心 ➔
+        </a>
+        <button data-action="open-download-modal" data-target-platform="ios"
+          class="px-6 py-3 rounded-full text-white bg-brand-700/60 hover:bg-brand-700 border border-white/20 font-bold transition-all">
+          ⚡ 网盘极速通道
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 页脚 -->
+  <footer
+    class="bg-white dark:bg-[#070910] border-t border-slate-200/80 dark:border-slate-800/80 py-12 text-sm text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-100 dark:border-slate-800/60">
+        <div class="text-center sm:text-left">
+          <div class="font-bold text-slate-900 dark:text-white text-base">AirCard 🎴 中文官网</div>
+          <div class="text-xs mt-1">免越狱 iOS 18+ Apple 钱包卡面与锁屏按键美化工具</div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium">
+          <a href="index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
+          <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
+          <a href="download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+          <a href="tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors font-bold text-brand-600 dark:text-brand-400">使用教程</a>
+          <a href="https://github.com/aircardios" target="_blank" rel="noopener"
+            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">GitHub 组织</a>
+        </div>
+      </div>
+
+      <div class="text-center text-xs text-slate-400 dark:text-slate-500 mt-8 space-y-1">
+        <p>本网站为 AirCard 中文汉化文档镜像，旨在方便中文用户阅读、学习与研究。所有权利归原作者所有。</p>
+        <p>© 2026 aircardios · MIT / GPL 开放源代码许可</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 网盘下载弹窗模态框 -->
+  <div id="downloadModal"
+    class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/70 backdrop-blur-sm">
+    <div
+      class="modal-box w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button
+        class="modal-close absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-white text-2xl leading-none"
+        aria-label="关闭">&times;</button>
+
+      <div class="mb-5">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+          <span>☁️</span> AirCard 国内高速网盘下载
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">请选择您需要使用的客户端平台，获取对应的专属网盘极速下载通道：</p>
+      </div>
+
+      <!-- 平台切换 Pills -->
+      <div class="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-5 text-xs font-semibold">
+        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all bg-brand-600 text-white shadow-sm"
+          data-modal-tab="ios">
+          📱 iOS (<span data-bind-version="ios">v1.2</span>)
+        </button>
+        <button
+          class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+          data-modal-tab="windows">
+          🪟 Windows (<span data-bind-version="windows">v1.2.2</span>)
+        </button>
+        <button
+          class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700"
+          data-modal-tab="macos">
+          🍎 macOS (<span data-bind-version="macos">v1.2.2</span>)
+        </button>
+      </div>
+
+      <!-- 面板 1: iOS 网盘通道 -->
+      <div id="modal-pane-ios" class="modal-platform-pane space-y-3">
+        <div class="flex items-center justify-between px-1 text-xs text-slate-500 dark:text-slate-400">
+          <span>AirCard-iOS (无需电脑 · 支持 iOS 18~27)</span>
+          <span class="font-bold text-brand-600 dark:text-brand-400">最新版 <span
+              data-bind-version="ios">v1.2</span></span>
+        </div>
+
+        <!-- 迅雷 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-blue-500">⚡</span> 迅雷网盘 (官方分流)
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-600 dark:text-slate-300">
+              <span>提取码: <strong class="text-brand-600 dark:text-brand-400"
+                  data-code-display="ios-xunlei">6edp</strong></span>
+              <button
+                class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 font-sans shadow-sm"
+                data-copy-text="6edp" data-code-copy="ios-xunlei">复制</button>
+            </div>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=6edp#" target="_blank" rel="noopener"
+            data-platform="ios" data-drive="xunlei"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all">
+            前往迅雷网盘下载 AirCard-iOS
+          </a>
+        </div>
+
+        <!-- 光鸭 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-emerald-500">🦆</span> 光鸭网盘 (免登录直链)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold"
+              data-code-display="ios-guangya">免提取码</span>
+          </div>
+          <a href="https://www.guangyapan.com/s/1948387308566241285_aeWXEya0Twth-MDh" target="_blank" rel="noopener"
+            data-platform="ios" data-drive="guangya"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+            前往光鸭网盘直链下载
+          </a>
+        </div>
+
+        <!-- 夸克 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-brand-500">⚡</span> 夸克网盘 (全量资源包)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-semibold"
+              data-code-display="ios-quark">无提取码</span>
+          </div>
+          <a href="https://pan.quark.cn/s/c8454bb2e4f1" target="_blank" rel="noopener" data-platform="ios"
+            data-drive="quark"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all">
+            前往夸克网盘下载
+          </a>
+        </div>
+      </div>
+
+      <!-- 面板 2: Windows 网盘通道 -->
+      <div id="modal-pane-windows" class="modal-platform-pane space-y-3 hidden">
+        <div class="flex items-center justify-between px-1 text-xs text-slate-500 dark:text-slate-400">
+          <span>AirCard for Windows (Rust 原生 · 极速 64位)</span>
+          <span class="font-bold text-brand-600 dark:text-brand-400">最新版 <span
+              data-bind-version="windows">v1.2.2</span></span>
+        </div>
+
+        <!-- 迅雷 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-blue-500">⚡</span> 迅雷网盘 (官方分流)
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-600 dark:text-slate-300">
+              <span>提取码: <strong class="text-brand-600 dark:text-brand-400"
+                  data-code-display="windows-xunlei">9sns</strong></span>
+              <button
+                class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 font-sans shadow-sm"
+                data-copy-text="9sns" data-code-copy="windows-xunlei">复制</button>
+            </div>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=9sns#" target="_blank" rel="noopener"
+            data-platform="windows" data-drive="xunlei"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all">
+            前往迅雷网盘下载 aircard.exe
+          </a>
+        </div>
+
+        <!-- 光鸭 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-emerald-500">🦆</span> 光鸭网盘 (免登录直链)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold"
+              data-code-display="windows-guangya">免提取码</span>
+          </div>
+          <a href="https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh" target="_blank" rel="noopener"
+            data-platform="windows" data-drive="guangya"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+            前往光鸭网盘直链下载
+          </a>
+        </div>
+
+        <!-- 夸克 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-brand-500">⚡</span> 夸克网盘 (全量资源包)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-semibold"
+              data-code-display="windows-quark">无提取码</span>
+          </div>
+          <a href="https://pan.quark.cn/s/fb902664428a" target="_blank" rel="noopener" data-platform="windows"
+            data-drive="quark"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all">
+            前往夸克网盘下载
+          </a>
+        </div>
+      </div>
+
+      <!-- 面板 3: macOS 网盘通道 -->
+      <div id="modal-pane-macos" class="modal-platform-pane space-y-3 hidden">
+        <div class="flex items-center justify-between px-1 text-xs text-slate-500 dark:text-slate-400">
+          <span>AirCard for macOS (Universal 2 双架构 DMG)</span>
+          <span class="font-bold text-brand-600 dark:text-brand-400">最新版 <span
+              data-bind-version="macos">v1.2.2</span></span>
+        </div>
+
+        <!-- 迅雷 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-blue-500">⚡</span> 迅雷网盘 (官方分流)
+            </span>
+            <div class="flex items-center gap-1 text-xs font-mono text-slate-600 dark:text-slate-300">
+              <span>提取码: <strong class="text-brand-600 dark:text-brand-400"
+                  data-code-display="macos-xunlei">htkt</strong></span>
+              <button
+                class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600 font-sans shadow-sm"
+                data-copy-text="htkt" data-code-copy="macos-xunlei">复制</button>
+            </div>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tfH776mp7OLKRtGUCyuE2A1?pwd=htkt#" target="_blank" rel="noopener"
+            data-platform="macos" data-drive="xunlei"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all">
+            前往迅雷网盘下载 AirCard.dmg
+          </a>
+        </div>
+
+        <!-- 光鸭 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-emerald-500">🦆</span> 光鸭网盘 (免登录直链)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-semibold"
+              data-code-display="macos-guangya">免提取码</span>
+          </div>
+          <a href="https://www.guangyapan.com/s/1948388010319433771_aeWXEya0Twth-MDh" target="_blank" rel="noopener"
+            data-platform="macos" data-drive="guangya"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+            前往光鸭网盘直链下载
+          </a>
+        </div>
+
+        <!-- 夸克 -->
+        <div
+          class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 rounded-xl p-3.5 flex flex-col gap-2">
+          <div class="flex justify-between items-center">
+            <span class="font-bold text-slate-900 dark:text-white text-xs sm:text-sm flex items-center gap-1.5">
+              <span class="text-brand-500">⚡</span> 夸克网盘 (全量资源包)
+            </span>
+            <span
+              class="text-[11px] px-2 py-0.5 rounded bg-brand-100 dark:bg-brand-950 text-brand-700 dark:text-brand-300 font-semibold"
+              data-code-display="macos-quark">无提取码</span>
+          </div>
+          <a href="https://pan.quark.cn/s/d60fefe986c5" target="_blank" rel="noopener" data-platform="macos"
+            data-drive="quark"
+            class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-brand-600 hover:bg-brand-700 text-white shadow-sm transition-all">
+            前往夸克网盘下载
+          </a>
+        </div>
+      </div>
+
+      <!-- 底部跳转 -->
+      <div
+        class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+        <span>需要详细客户端安装包与校验？</span>
+        <a href="download.html" class="font-semibold text-brand-600 dark:text-brand-400 hover:underline">
+          前往下载中心 ➔
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 核心交互逻辑 -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+# robots.txt for aircardios.github.io
+User-agent: *
+Allow: /
+
+# 搜索引擎与 AI 爬虫优化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI 搜索与大模型索引（AI-SEO / GEO）
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# 站点地图
+Sitemap: https://aircardios.github.io/sitemap.xml

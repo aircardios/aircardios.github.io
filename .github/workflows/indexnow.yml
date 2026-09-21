@@ -1,0 +1,28 @@
+name: Submit IndexNow to Bing
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'data/**'
+  workflow_dispatch:
+
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 提交最新 URL 至 Bing / IndexNow
+        run: |
+          # 稍等 10 秒确保 GitHub Pages 完成就绪
+          sleep 10
+          python3 scripts/submit_indexnow.py

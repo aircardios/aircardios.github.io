@@ -1,0 +1,143 @@
+/* ==========================================================================
+   AirCard 中文官网 - 现代简约科技蓝样式补丁
+   配合 TailwindCSS 使用，提供 3D 视差、光泽、微动效与平滑过渡
+   ========================================================================== */
+
+/* 全局平滑过渡 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 背景光斑微动效 */
+.bg-ambient-light {
+  background: radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 45%),
+              radial-gradient(circle at 85% 60%, rgba(14, 165, 233, 0.08) 0%, transparent 45%);
+}
+
+.dark .bg-ambient-dark {
+  background: radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 85% 60%, rgba(14, 165, 233, 0.12) 0%, transparent 50%);
+}
+
+/* 3D 悬浮 Apple 钱包卡片 */
+.wallet-card-container {
+  perspective: 1000px;
+}
+
+.wallet-card-3d {
+  aspect-ratio: 1.586 / 1; /* 1536 × 969 信用卡标准比例 */
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.card-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  border-radius: inherit;
+}
+
+.wallet-card-3d:hover .card-glare {
+  opacity: 1;
+}
+
+/* 卡面皮肤样式 */
+.card-skin-tech {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 40%, #2563eb 75%, #38bdf8 100%);
+}
+
+.card-skin-titanium {
+  background: linear-gradient(135deg, #334155 0%, #1e293b 50%, #0f172a 100%);
+}
+
+.card-skin-emerald {
+  background: linear-gradient(135deg, #064e3b 0%, #047857 50%, #10b981 100%);
+}
+
+/* 锁屏按键交互反馈 */
+.keypad-btn {
+  transition: all 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.keypad-btn:active, .keypad-btn.pressed {
+  transform: scale(0.92);
+}
+
+/* 模态弹窗动画 */
+.modal-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  transform: scale(0.95);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-overlay.active .modal-box {
+  transform: scale(1);
+}
+
+/* Toast 浮动提示 */
+.toast-msg {
+  position: fixed;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%) translateY(80px);
+  padding: 10px 22px;
+  border-radius: 9999px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-msg.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.4);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(71, 85, 105, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.7);
+}

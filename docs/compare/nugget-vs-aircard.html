@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nugget 与 AirCard 对比：免越狱美化工具多维度体验横评</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99TQD75VX7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-99TQD75VX7');
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Nugget 凭借 SparseRestore 与 MobileBackup 注入风靡一时，而 AirCard 则主打 Apple Pay 钱包卡面美化与手机端免电脑原生运行。本文从兼容性、便利度与安全性展开全面横评。">
+  <meta name="keywords" content="Nugget vs AirCard 免越狱对比">
+  <meta name="author" content="AirCard iOS">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aircardios.github.io/compare/nugget-vs-aircard.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎴</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="AirCard 🎴 中文官网">
+  <meta property="og:title" content="Nugget 与 AirCard 对比：免越狱美化工具多维度体验横评">
+  <meta property="og:description" content="Nugget 凭借 SparseRestore 与 MobileBackup 注入风靡一时，而 AirCard 则主打 Apple Pay 钱包卡面美化与手机端免电脑原生运行。本文从兼容性、便利度与安全性展开全面横评。">
+  <meta property="og:url" content="https://aircardios.github.io/compare/nugget-vs-aircard.html">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nugget 与 AirCard 对比：免越狱美化工具多维度体验横评">
+  <meta name="twitter:description" content="Nugget 凭借 SparseRestore 与 MobileBackup 注入风靡一时，而 AirCard 则主打 Apple Pay 钱包卡面美化与手机端免电脑原生运行。本文从兼容性、便利度与安全性展开全面横评。">
+
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Nugget 与 AirCard 对比：免越狱美化工具多维度体验横评",
+      "description": "Nugget 凭借 SparseRestore 与 MobileBackup 注入风靡一时，而 AirCard 则主打 Apple Pay 钱包卡面美化与手机端免电脑原生运行。本文从兼容性、便利度与安全性展开全面横评。",
+      "author": {
+        "@type": "Organization",
+        "name": "AirCard Team"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "首页",
+          "item": "https://aircardios.github.io/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "工具对比",
+          "item": "https://aircardios.github.io/tutorial.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Nugget vs AirCard 横评对比"
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+  <!-- 防白屏/闪烁主题预载脚本 -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- TailwindCSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eff6ff', 100: '#dbeafe', 200: '#bfdbfe', 300: '#93c5fd',
+              400: '#60a5fa', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8',
+              800: '#1e40af', 900: '#1e3a8a', 950: '#172554',
+            }
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', '"Segoe UI"', 'Roboto', '"PingFang SC"', '"Hiragino Sans GB"', '"Microsoft YaHei"', 'sans-serif'],
+            mono: ['"SF Mono"', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/config.js"></script>
+</head>
+
+<body class="bg-slate-50 dark:bg-[#090d16] text-slate-800 dark:text-slate-100 font-sans antialiased min-h-screen relative overflow-x-hidden transition-colors duration-300">
+  <!-- 科技微光背景光斑 -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-ambient-light dark:bg-ambient-dark"></div>
+
+  <!-- 顶部导航栏 -->
+  <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="../index.html" class="flex items-center gap-3 group text-slate-900 dark:text-white">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-xl text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+          🎴
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-bold tracking-tight">AirCard</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            知识库
+          </span>
+        </div>
+      </a>
+
+      <!-- 导航链接 (桌面端) -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
+        <a href="../cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
+        <a href="../tutorial.html" class="text-brand-600 dark:hover:text-brand-400 font-bold">使用教程</a>
+        <a href="../download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+        <a href="../index.html#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">常见问题</a>
+      </nav>
+
+      <!-- 导航操作区 -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
+          class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
+          <span id="themeIcon"></span>
+        </button>
+
+        <a href="../download.html"
+          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 transition-all">
+          <span>⬇️ 下载客户端</span>
+        </a>
+
+        <button class="md:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+      <a href="../index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官网首页</a>
+      <a href="../cards/index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版库</a>
+      <a href="../tutorial.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">使用教程</a>
+      <a href="../download.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">下载中心</a>
+      <a href="../download.html" class="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-600 text-white shadow-md">极速下载客户端</a>
+    </div>
+  </header>
+
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <nav class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-6">
+      <a href="../index.html" class="hover:text-brand-600">首页</a>
+      <span>/</span>
+      <a href="../tutorial.html" class="hover:text-brand-600">教程中心</a>
+      <span>/</span>
+      <span class="text-slate-800 dark:text-slate-200 font-semibold">Nugget vs AirCard 横评对比</span>
+    </nav>
+
+    <div class="mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 mb-3">
+        <span>⚖️ 方案横评 · Nugget vs AirCard</span>
+      </span>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+        Nugget 与 AirCard 对比：免越狱美化工具多维度体验横评
+      </h1>
+      <p class="text-base text-slate-600 dark:text-slate-300 mt-3 leading-relaxed">
+        Nugget 凭借 SparseRestore 与 MobileBackup 注入风靡一时，而 AirCard 则主打 Apple Pay 钱包卡面美化与手机端免电脑原生运行。本文从兼容性、便利度与安全性展开全面横评。
+      </p>
+    </div>
+
+    <!-- 对比表格 -->
+    <div class="overflow-x-auto rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900/70 shadow-sm mb-10">
+      <table class="w-full text-left border-collapse">
+        <thead>
+          <tr class="border-b border-slate-200 dark:border-slate-700 bg-slate-100/70 dark:bg-slate-800/60 text-xs sm:text-sm">
+            <th class="py-3.5 px-4 font-bold text-slate-800 dark:text-slate-200">对比维度</th>
+            <th class="py-3.5 px-4 font-bold text-slate-600 dark:text-slate-400">Nugget</th>
+            <th class="py-3.5 px-4 font-bold text-brand-600 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/30">AirCard 🎴</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr class="border-b border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/30">核心侧重点</td>
+              <td class="py-3 px-4 text-slate-600 dark:text-slate-400">系统开关调整、灵动岛、壁纸修改</td>
+              <td class="py-3 px-4 font-bold text-brand-600 dark:text-brand-400 bg-brand-50/30 dark:bg-brand-950/20">Apple 钱包卡面深度定制 + 锁屏按键</td>
+            </tr>
+            
+            <tr class="border-b border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/30">手机端独立免电脑</td>
+              <td class="py-3 px-4 text-slate-600 dark:text-slate-400">目前主要依赖 PC/Mac 电脑端运行</td>
+              <td class="py-3 px-4 font-bold text-brand-600 dark:text-brand-400 bg-brand-50/30 dark:bg-brand-950/20">支持 iPhone 原生独立运行 (AirCard-iOS)</td>
+            </tr>
+            
+            <tr class="border-b border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/30">运行依赖与体积</td>
+              <td class="py-3 px-4 text-slate-600 dark:text-slate-400">依赖 Python / 较复杂环境</td>
+              <td class="py-3 px-4 font-bold text-brand-600 dark:text-brand-400 bg-brand-50/30 dark:bg-brand-950/20">Rust 原生 ~7.5MB，零环境依赖</td>
+            </tr>
+            
+            <tr class="border-b border-slate-100 dark:border-slate-800 text-xs sm:text-sm">
+              <td class="py-3 px-4 font-semibold text-slate-900 dark:text-white bg-slate-50/50 dark:bg-slate-800/30">安全回滚机制</td>
+              <td class="py-3 px-4 text-slate-600 dark:text-slate-400">需备份还原恢复</td>
+              <td class="py-3 px-4 font-bold text-brand-600 dark:text-brand-400 bg-brand-50/30 dark:bg-brand-950/20">内置快照一键 Restore 恢复</td>
+            </tr>
+            
+        </tbody>
+      </table>
+    </div>
+
+    <div class="p-5 sm:p-6 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm mb-12 space-y-2">
+      <h3 class="text-base font-bold text-slate-900 dark:text-white flex items-center gap-2">
+        <span>🔄</span> 无缝过渡与迁移指引
+      </h3>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        推荐搭配使用：使用 Nugget 开启系统特定开关，使用 AirCard 专属打造极具视觉冲击力的 Apple Pay 银行卡面与锁屏九宫格按键！
+      </p>
+    </div>
+
+    <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-600 to-cyan-600 text-white flex flex-col sm:flex-row items-center justify-between gap-6 shadow-lg">
+      <div>
+        <h3 class="text-lg sm:text-xl font-bold">立即体验免越狱神器 AirCard</h3>
+        <p class="text-xs sm:text-sm text-brand-100 mt-1">支持 iPhone 手机端、macOS 通用版与 Windows 极速版客户端。</p>
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <a href="../download.html" class="px-5 py-2.5 rounded-full bg-white text-brand-700 font-bold text-xs sm:text-sm shadow-md hover:bg-brand-50 transition-all">下载 AirCard ➔</a>
+      </div>
+    </div>
+  </main>
+  <!-- 页脚 -->
+  <footer class="bg-white dark:bg-[#070910] border-t border-slate-200/80 dark:border-slate-800/80 py-12 text-sm text-slate-500 dark:text-slate-400 mt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-6 pb-8 border-b border-slate-100 dark:border-slate-800/60">
+        <div class="text-center sm:text-left">
+          <div class="font-bold text-slate-900 dark:text-white text-base">AirCard 🎴 知识库与下载中心</div>
+          <div class="text-xs mt-1">免越狱 iOS 18+ Apple 钱包卡面与锁屏按键美化工具</div>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-6 text-xs sm:text-sm font-medium">
+          <a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
+          <a href="../cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
+          <a href="../download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+          <a href="../tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
+          <a href="https://github.com/aircardios" target="_blank" rel="noopener" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">GitHub 组织</a>
+        </div>
+      </div>
+
+      <div class="text-center text-xs text-slate-400 dark:text-slate-500 mt-8 space-y-1">
+        <p>本网站为 AirCard 中文汉化文档镜像，旨在方便中文用户阅读、学习与研究。所有权利归原作者所有。</p>
+        <p>© 2026 aircardios · MIT / GPL 开放源代码许可</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 网盘下载弹窗模态框 -->
+  <div id="downloadModal"
+    class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/70 backdrop-blur-sm">
+    <div class="modal-box w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+      <button class="modal-close absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-white text-2xl leading-none" aria-label="关闭">&times;</button>
+      <div class="mb-5">
+        <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"><span>☁️</span> AirCard 国内高速网盘下载</h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">请选择客户端平台获取对应下载链接：</p>
+      </div>
+
+      <div class="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-5 text-xs font-semibold">
+        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all bg-brand-600 text-white shadow-sm" data-modal-tab="ios">📱 iOS (<span data-bind-version="ios">v1.2</span>)</button>
+        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700" data-modal-tab="windows">🪟 Windows (<span data-bind-version="windows">v1.2.2</span>)</button>
+        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700" data-modal-tab="macos">🍎 macOS (<span data-bind-version="macos">v1.2.2</span>)</button>
+      </div>
+
+      <div id="modal-pane-ios" class="modal-platform-pane space-y-3">
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: 6edp)</span>
+            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="6edp">复制</button>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tebTkB5C1-LPaJG2jUgqwA1?pwd=6edp#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
+        </div>
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-900 dark:text-white">🦆 光鸭网盘 (免登录直链)</span>
+            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">免提取码</span>
+          </div>
+          <a href="https://www.guangyapan.com/s/1948387308566241285_aeWXEya0Twth-MDh" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800">前往光鸭直链下载</a>
+        </div>
+      </div>
+
+      <div id="modal-pane-windows" class="modal-platform-pane space-y-3 hidden">
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: 9sns)</span>
+            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="9sns">复制</button>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
+        </div>
+      </div>
+
+      <div id="modal-pane-macos" class="modal-platform-pane space-y-3 hidden">
+        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs">
+            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: htkt)</span>
+            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="htkt">复制</button>
+          </div>
+          <a href="https://pan.xunlei.com/s/VP1tfH776mp7OLKRtGUCyuE2A1?pwd=htkt#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
+        </div>
+      </div>
+
+      <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
+        <span>需要详细校验信息与历史版本？</span>
+        <a href="../download.html" class="font-semibold text-brand-600 dark:text-brand-400 hover:underline">下载中心 ➔</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
+
