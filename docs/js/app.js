@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
   init3DWalletCard();
   initKeypadPreview();
   initPlatformTabs();
-  initDownloadModal();
   initClipboardHandlers();
   initMobileMenu();
   populateDynamicConfig();
@@ -183,75 +182,10 @@ function initPlatformTabs() {
 }
 
 /**
- * 5. 下载弹窗与网盘分流交互 (支持多平台 Tab 联动)
+ * 5. 下载交互（模态框已全站下线，统一由 download.html 承载所有下载出口）
  */
 function initDownloadModal() {
-  const modal = document.getElementById("downloadModal");
-  const openBtns = document.querySelectorAll("[data-action='open-download-modal']");
-  const closeBtn = document.querySelector(".modal-close");
-
-  if (!modal) return;
-
-  // 弹窗内的平台切换选项卡
-  const modalTabs = modal.querySelectorAll(".modal-platform-tab");
-  const modalPanes = modal.querySelectorAll(".modal-platform-pane");
-
-  function switchModalPlatform(platformKey) {
-    if (!platformKey) return;
-    modalTabs.forEach((tab) => {
-      if (tab.getAttribute("data-modal-tab") === platformKey) {
-        tab.classList.add("bg-brand-600", "text-white", "shadow-sm");
-        tab.classList.remove("text-slate-600", "dark:text-slate-400", "hover:bg-slate-100", "dark:hover:bg-slate-800");
-      } else {
-        tab.classList.remove("bg-brand-600", "text-white", "shadow-sm");
-        tab.classList.add("text-slate-600", "dark:text-slate-400", "hover:bg-slate-100", "dark:hover:bg-slate-800");
-      }
-    });
-
-    modalPanes.forEach((pane) => {
-      if (pane.id === `modal-pane-${platformKey}`) {
-        pane.classList.remove("hidden");
-      } else {
-        pane.classList.add("hidden");
-      }
-    });
-  }
-
-  modalTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const platformKey = tab.getAttribute("data-modal-tab");
-      switchModalPlatform(platformKey);
-    });
-  });
-
-  openBtns.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetPlatform = btn.getAttribute("data-target-platform");
-      if (targetPlatform) {
-        switchModalPlatform(targetPlatform);
-      }
-      modal.classList.add("active");
-    });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", () => {
-      modal.classList.remove("active");
-    });
-  }
-
-  modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-      modal.classList.remove("active");
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("active")) {
-      modal.classList.remove("active");
-    }
-  });
+  // 全站统一直接出口至 download.html
 }
 
 /**

@@ -76,26 +76,6 @@ body {
   transform: scale(0.92);
 }
 
-/* 模态弹窗动画 */
-.modal-overlay {
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.modal-overlay.active {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.modal-box {
-  transform: scale(0.95);
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.modal-overlay.active .modal-box {
-  transform: scale(1);
-}
 
 /* Toast 浮动提示 */
 .toast-msg {
