@@ -276,66 +276,6 @@
     </div>
   </footer>
 
-  <!-- 网盘下载弹窗模态框 -->
-  <div id="downloadModal"
-    class="modal-overlay fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 dark:bg-black/70 backdrop-blur-sm">
-    <div class="modal-box w-full max-w-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-      <button class="modal-close absolute top-5 right-5 text-slate-400 hover:text-slate-600 dark:hover:text-white text-2xl leading-none" aria-label="关闭">&times;</button>
-      <div class="mb-5">
-        <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2"><span>☁️</span> AirCard 国内高速网盘下载</h3>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">请选择客户端平台获取对应下载链接：</p>
-      </div>
-
-      <div class="flex items-center gap-1.5 p-1 bg-slate-100 dark:bg-slate-800 rounded-xl mb-5 text-xs font-semibold">
-        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all bg-brand-600 text-white shadow-sm" data-modal-tab="ios">📱 iOS (<span data-bind-version="ios">v1.3</span>)</button>
-        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700" data-modal-tab="windows">🪟 Windows (<span data-bind-version="windows">v1.2.2</span>)</button>
-        <button class="modal-platform-tab flex-1 py-2 px-3 rounded-lg transition-all text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700" data-modal-tab="macos">🍎 macOS (<span data-bind-version="macos">v1.2.2</span>)</button>
-      </div>
-
-      <div id="modal-pane-ios" class="modal-platform-pane space-y-3">
-        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: bdzw)</span>
-            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="bdzw">复制</button>
-          </div>
-          <a href="https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
-        </div>
-        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-slate-900 dark:text-white">🦆 光鸭网盘 (免登录直链)</span>
-            <span class="text-xs text-emerald-600 dark:text-emerald-400 font-semibold">免提取码</span>
-          </div>
-          <a href="https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center border border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800">前往光鸭直链下载</a>
-        </div>
-      </div>
-
-      <div id="modal-pane-windows" class="modal-platform-pane space-y-3 hidden">
-        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: 9sns)</span>
-            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="9sns">复制</button>
-          </div>
-          <a href="https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
-        </div>
-      </div>
-
-      <div id="modal-pane-macos" class="modal-platform-pane space-y-3 hidden">
-        <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 flex flex-col gap-2">
-          <div class="flex justify-between items-center text-xs">
-            <span class="font-bold text-slate-900 dark:text-white">⚡ 迅雷网盘 (提取码: htkt)</span>
-            <button class="btn-copy px-2 py-0.5 rounded bg-white dark:bg-slate-700 font-sans text-xs" data-copy-text="htkt">复制</button>
-          </div>
-          <a href="https://pan.xunlei.com/s/VP1tfH776mp7OLKRtGUCyuE2A1?pwd=htkt#" target="_blank" rel="noopener" class="w-full py-2 px-3 rounded-lg text-xs font-semibold text-center bg-blue-600 text-white">前往迅雷网盘下载</a>
-        </div>
-      </div>
-
-      <div class="mt-5 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs text-slate-500">
-        <span>需要详细校验信息与历史版本？</span>
-        <a href="../download.html" class="font-semibold text-brand-600 dark:text-brand-400 hover:underline">下载中心 ➔</a>
-      </div>
-    </div>
-  </div>
-
   <script src="../js/app.js"></script>
 </body>
 </html>
