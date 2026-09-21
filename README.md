@@ -22,10 +22,6 @@
   </a>
   <img src="https://img.shields.io/badge/免越狱-No%20Jailbreak-10b981?style=for-the-badge&logo=apple&logoColor=white" alt="No Jailbreak" />
   <img src="https://img.shields.io/badge/支持-iOS%2018%20~%2027+-6366f1?style=for-the-badge" alt="iOS Support" />
-  <img src="https://img.shields.io/badge/开源协议-MIT-green?style=for-the-badge" alt="License" />
-  <a href="https://www.paypal.com/donate/?hosted_button_id=98QRTC2HFRA4Y">
-    <img src="https://img.shields.io/badge/赞助-PayPal-00457C?style=for-the-badge&logo=paypal" alt="Donate" />
-  </a>
 </p>
 
 <p align="center">
@@ -37,7 +33,6 @@
   <a href="#-三端原生客户端">📱 三端客户端</a> ·
   <a href="#-快速上手教程">🔧 教程</a> ·
   <a href="#-致谢与开发者-credits">👏 致谢</a> ·
-  <a href="#-支持与赞助-support">☕ 赞助</a>
 </p>
 
 ---
@@ -231,16 +226,6 @@ AirCard-iOS/
 
 ---
 
-## ☕ 支持与赞助 (Support)
-
-如果您认可并希望支持 AirCard-iOS 的开发与维护，可以通过以下方式进行赞助支持：
-
-- **PayPal**: [Donate via PayPal](https://www.paypal.com/donate/?hosted_button_id=98QRTC2HFRA4Y)
-- **TON**: `UQBm9KPhtMw-XVVjirUoa09wzrlyWsbeZhKfefl1Uw-qNZ-r`
-- **USDT (TRC20)**: `TDkDMCyjYxgvkWUnQiF5Erk2RyPQMT6G1n`
-- **USDT / BNB (BEP20)**: `0x0954dc491c502849d04956ef74634aa5931a08e8`
-
----
 
 ## 📄 免责声明与开源许可
 
