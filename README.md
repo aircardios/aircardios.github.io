@@ -191,6 +191,7 @@
 ## 👏 致谢与开发者 (Credits)
 
 - **[@mak5er](https://github.com/mak5er)**：主开发者，负责 UI、锁屏密码主题、Tendies 引擎、端侧免电脑配对。
+- **[@Lumid-Off](https://github.com/Lumid-Off)**：原作者核心贡献者。
 - **[@merybist](https://github.com/merybist)**：初始版本移植贡献。
 - **[AirLift](https://github.com/0xjohnnydev/airlift)** by **[0xjohnny (@0xjohnnydev)](https://github.com/0xjohnnydev)**：底层 `AirliftFFI` 所依赖的 AirTraffic 与 ATAirlock 沙盒逃逸核心研究。
 - **[NeoSpring](https://github.com/rooootdev/neospring)**：**[@skadz108](https://github.com/skadz108)** 与 **[@rooootdev](https://github.com/rooootdev)** 的 Swift 实现，以及 **[@neonmodder123](https://github.com/neonmodder123)** 发现的 WebKit GPU 进程崩溃 respring 技术。
@@ -200,7 +201,7 @@
 
 ## 📄 免责声明与开源许可
 
-- 本项目及本网站文档仅供学习交流与个人研究使用，所有权利归原作者所有。
+- 本项目及本网站文档仅供学习交流与个人研究使用，所有权利归原作者 [@mak5er](https://github.com/mak5er) 和 [@Lumid-Off](https://github.com/Lumid-Off) 所有。
 - 遵循 **MIT** 开源许可协议。详见 [LICENSE](LICENSE)。
 - 官方主页：[https://aircardios.github.io/](https://aircardios.github.io/)
 - 卡面素材库：[https://aircardios.github.io/cards/index.html](https://aircardios.github.io/cards/index.html)
