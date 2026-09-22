@@ -207,9 +207,9 @@
         </div>
       </a>
 
-      <!-- 导航链接 (桌面端) -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
-        <a href="#features" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">功能特性</a>
+      <!-- 导航链接 (桌面端: lg 以上完整展示 7 项) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="index.html" class="text-brand-600 dark:text-brand-400 font-bold transition-colors">官网首页</a>
         <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
         <a href="pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
         <a href="tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
@@ -219,7 +219,7 @@
       </nav>
 
       <!-- 导航功能操作区 -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- 亮暗模式切换按钮 -->
         <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
           class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
@@ -230,13 +230,13 @@
 
         <!-- 立即下载 CTA -->
         <a href="download.html"
-          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 hover:shadow-brand-600/40 transition-all">
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 hover:shadow-brand-600/40 transition-all">
           <span>⬇️ 立即下载</span>
         </a>
 
-        <!-- 移动端汉堡菜单 -->
+        <!-- 移动端/平板汉堡菜单 (lg 以下展示) -->
         <button
-          class="md:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          class="lg:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="展开导航菜单">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -244,11 +244,11 @@
       </div>
     </div>
 
-    <!-- 移动端抽屉菜单 -->
+    <!-- 移动端/平板抽屉菜单 (lg 以下折叠展示 7 项) -->
     <div id="mobileMenu"
-      class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
-      <a href="#features"
-        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">功能特性</a>
+      class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+      <a href="index.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-brand-600 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/40 font-bold">官网首页</a>
       <a href="cards/index.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版库</a>
       <a href="pass-themes/index.html"
@@ -579,6 +579,167 @@
             class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
             零破坏 · 随心备份
           </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 锁屏密码按键主题精选展区 (响应式: 手机2列 / Pad 3列 / 电脑 6列) -->
+  <section id="pass-themes" class="py-20 relative overflow-hidden bg-gradient-to-b from-transparent via-slate-100/50 to-transparent dark:via-slate-900/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300 border border-brand-200 dark:border-brand-800 mb-3">
+          <span>🔥 iOS 18+ 锁屏新潮玩法 · 免越狱原生渲染</span>
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          告别单调原生灰白！<span class="bg-gradient-to-r from-brand-600 via-indigo-500 to-cyan-500 bg-clip-text text-transparent">锁屏密码按键皮肤 (.passthm)</span>
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300 mt-4 text-base sm:text-lg leading-relaxed">
+          AirCard 深度整合系统级密码皮肤注入通道，支持免越狱将经典黑白数字键盘重绘为游戏、动漫、极客与波普潮流主题，解锁仪式感拉满！
+        </p>
+      </div>
+
+      <!-- 精选 6 款热门主题响应式栅格 -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 mb-12">
+        <!-- 主题 1: 太空狼人杀 -->
+        <a href="pass-themes/among-us.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/among_us.png" alt="太空狼人杀 (Among Us)" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">潮玩游戏</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">太空狼人杀</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">呆萌宇航员击杀背刺元素，锁屏仪式感拉满。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+
+        <!-- 主题 2: 我的世界 -->
+        <a href="pass-themes/minecraft.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/Minecraft_preview.png" alt="我的世界 (Minecraft)" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">怀旧游戏</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">我的世界 MC</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">泥土、黑曜石与矿石像素方块，原汁原味还原。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+
+        <!-- 主题 3: 七龙珠 -->
+        <a href="pass-themes/dragon-ball.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/DragonBall_preview.png" alt="七龙珠 (Dragon Ball)" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">热血动漫</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">七龙珠·神龙</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">一星至七星龙珠晶透质感，集齐龙珠唤醒屏幕。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+
+        <!-- 主题 4: 精灵宝可梦 -->
+        <a href="pass-themes/pokeball-pass.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/Pokeball_Pass_preview.png" alt="宝可梦精灵球" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">经典动漫</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">宝可梦精灵球</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">红白球、大师球全套神装，按动就像投掷捕获。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+
+        <!-- 主题 5: Linux 极客 -->
+        <a href="pass-themes/linux-distros.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/Linux_Distros_preview.png" alt="极客 Linux 发行版" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">极客开源</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">极客 Linux</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">Debian、Arch、Ubuntu 徽标，程序员极客本色。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+
+        <!-- 主题 6: 夏日清凉甜筒 -->
+        <a href="pass-themes/ice-cream.html" class="group block p-3.5 sm:p-4 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-xl hover:border-brand-500/50 transition-all hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="w-full aspect-square rounded-xl mb-3 relative overflow-hidden shadow-inner bg-slate-950 flex items-center justify-center p-2.5">
+              <img src="https://raw.githubusercontent.com/SerStars/nugget-wallpapers/main/previews/passtheme/images/IceCream_preview.png" alt="夏日清凉甜筒" class="w-full h-full object-contain filter drop-shadow group-hover:scale-110 transition-transform duration-300 select-none" loading="lazy" />
+              <span class="absolute top-2 right-2 text-[9px] font-mono px-1.5 py-0.5 rounded bg-black/60 text-white/90 backdrop-blur-sm">.passthm</span>
+            </div>
+            <div class="flex items-center justify-between gap-1 mb-1">
+              <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-950 text-brand-700 dark:text-brand-300">萌趣可爱</span>
+              <span class="text-[10px] text-emerald-500 font-mono">免越狱</span>
+            </div>
+            <h3 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-brand-600 transition-colors">夏日清凉甜筒</h3>
+            <p class="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 mt-1 leading-relaxed">草莓圣代、抹茶甜筒，奶油圆润细腻高甜减压。</p>
+          </div>
+          <div class="pt-2 mt-2 border-t border-slate-100 dark:border-slate-800/80 flex items-center justify-between text-[11px] font-semibold text-brand-600 dark:text-brand-400">
+            <span>立即获取</span>
+            <span class="group-hover:translate-x-1 transition-transform">➔</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- 展区底部 CTA 行动呼吁卡片 -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white border border-indigo-900/50 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div class="space-y-1.5 text-center sm:text-left">
+          <div class="flex items-center justify-center sm:justify-start gap-2">
+            <span class="text-lg">🎨</span>
+            <h3 class="font-bold text-lg sm:text-xl">已收录全网 27+ 款高品质热门锁屏按键主题</h3>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
+            太空狼人杀、我的世界、七龙珠、宝可梦、Linux 极客、音游 OSU! 等多重风格已配备光鸭网盘极速直链下载，持续同步更新。
+          </p>
+        </div>
+        <div class="flex items-center gap-3 shrink-0 flex-wrap justify-center">
+          <a href="pass-themes/index.html" class="px-6 py-3 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-brand-500 to-cyan-500 hover:from-brand-600 hover:to-cyan-600 text-white shadow-lg shadow-brand-500/25 hover:scale-[1.02] transition-all">
+            浏览全部 27 款主题 ➔
+          </a>
+          <a href="tutorial.html" class="px-5 py-3 rounded-full text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/20 border border-white/15 text-white transition-all">
+            📖 导入使用教程
+          </a>
         </div>
       </div>
     </div>

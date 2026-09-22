@@ -185,8 +185,8 @@
         </div>
       </a>
 
-      <!-- 导航链接 -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <!-- 导航链接 (桌面端: lg 以上完整展示 7 项) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
         <a href="index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
         <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
         <a href="pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
@@ -197,7 +197,7 @@
       </nav>
 
       <!-- 导航功能操作区 -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <!-- 亮暗模式切换按钮 -->
         <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
           class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
@@ -205,13 +205,13 @@
         </button>
 
         <a href="index.html"
-          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
           <span>🏠 返回首页</span>
         </a>
 
-        <!-- 移动端汉堡菜单 -->
+        <!-- 移动端/平板汉堡菜单 (lg 以下展示) -->
         <button
-          class="md:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          class="lg:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="展开导航菜单">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -219,9 +219,9 @@
       </div>
     </div>
 
-    <!-- 移动端菜单 -->
+    <!-- 移动端/平板抽屉菜单 (lg 以下折叠展示 7 项) -->
     <div id="mobileMenu"
-      class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+      class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
       <a href="index.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官网首页</a>
       <a href="cards/index.html"
@@ -230,6 +230,8 @@
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">锁屏按键库</a>
       <a href="tutorial.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">使用教程</a>
+      <a href="download.html"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-brand-600 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/40 font-bold">下载中心</a>
       <a href="community.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官方社区</a>
       <a href="index.html#faq"

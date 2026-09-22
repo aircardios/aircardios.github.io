@@ -216,22 +216,43 @@ function initClipboardHandlers() {
 }
 
 /**
- * 7. 移动端抽屉菜单
+ * 7. 移动端与平板抽屉菜单管理 (支持全量按钮绑定、外部点击与视口自适应)
  */
 function initMobileMenu() {
-  const toggle = document.querySelector(".menu-toggle");
+  const toggles = document.querySelectorAll(".menu-toggle");
   const menu = document.getElementById("mobileMenu");
 
-  if (!toggle || !menu) return;
+  if (!toggles.length || !menu) return;
 
-  toggle.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
+  toggles.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      menu.classList.toggle("hidden");
+    });
   });
 
+  // 点击菜单项内部链接后自动收起
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       menu.classList.add("hidden");
     });
+  });
+
+  // 点击页面外部区域自动收起抽屉
+  document.addEventListener("click", (e) => {
+    if (!menu.classList.contains("hidden")) {
+      const isClickInside = menu.contains(e.target) || Array.from(toggles).some((t) => t.contains(e.target));
+      if (!isClickInside) {
+        menu.classList.add("hidden");
+      }
+    }
+  });
+
+  // 监听窗口大小变化（如 iPad 竖屏旋转为横屏时），自动隐藏移动端菜单
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1024 && !menu.classList.contains("hidden")) {
+      menu.classList.add("hidden");
+    }
   });
 }
 

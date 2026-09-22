@@ -118,42 +118,44 @@
 
   <!-- 顶部导航栏 -->
   <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="../index.html" class="flex items-center gap-3 group text-slate-900 dark:text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-3 group text-slate-900 dark:text-white shrink-0">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-xl text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
           🎴
         </div>
         <div class="flex items-center gap-2">
           <span class="text-xl font-bold tracking-tight">AirCard</span>
-          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hidden sm:inline-block">
             知识库
           </span>
         </div>
       </a>
 
-      <!-- 导航链接 (桌面端) -->
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300">
+      <!-- 导航链接 (桌面端: lg 以上完整展示 7 项) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
         <a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
         <a href="../cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
         <a href="../pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
         <a href="../tutorial.html" class="text-brand-600 dark:hover:text-brand-400 font-bold">使用教程</a>
         <a href="../download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+        <a href="../community.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官方社区</a>
         <a href="../index.html#faq" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">常见问题</a>
       </nav>
 
       <!-- 导航操作区 -->
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
           class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
           <span id="themeIcon"></span>
         </button>
 
         <a href="../download.html"
-          class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 transition-all">
+          class="hidden sm:inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 transition-all">
           <span>⬇️ 下载客户端</span>
         </a>
 
-        <button class="md:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+        <!-- 移动端/平板端汉堡菜单 (lg 以下展示) -->
+        <button class="lg:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="展开菜单">
           <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -161,13 +163,15 @@
       </div>
     </div>
 
-    <!-- 移动端菜单 -->
-    <div id="mobileMenu" class="hidden md:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+    <!-- 移动端/平板抽屉菜单 (lg 以下折叠展示 7 项) -->
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
       <a href="../index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官网首页</a>
       <a href="../cards/index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版库</a>
       <a href="../pass-themes/index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">锁屏按键库</a>
       <a href="../tutorial.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">使用教程</a>
       <a href="../download.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">下载中心</a>
+      <a href="../community.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官方社区</a>
+      <a href="../index.html#faq" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">常见问题</a>
       <a href="../download.html" class="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold bg-brand-600 text-white shadow-md">极速下载客户端</a>
     </div>
   </header>
@@ -268,6 +272,7 @@
           <a href="../pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
           <a href="../download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
           <a href="../tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
+          <a href="../community.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官方社区</a>
           <a href="https://github.com/aircardios" target="_blank" rel="noopener" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">GitHub 组织</a>
         </div>
       </div>
