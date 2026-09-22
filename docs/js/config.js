@@ -139,11 +139,11 @@ const AIR_CONFIG = {
     }
   },
 
-  // 扩展资源包（锁屏主题与卡面素材）
+  // 扩展资源包（已下线批量大礼包）
   resourcePack: {
-    title: "AirCard 美化扩展大礼包 (50+ 套锁屏主题 & 高清卡面模板)",
-    desc: "精选热门 .passthm 锁屏数字按键主题包、Apple Wallet 1536×969 高清 PSD/PNG 卡面模版，以及交通卡 Suica 专属矢量样式。",
-    url: "https://pan.quark.cn/s/c8454bb2e4f1" // 夸克网盘
+    title: "AirCard 美化资源",
+    desc: "支持在卡面模版库与锁屏按键专区单套免提取码高速下载。",
+    url: ""
   },
 
   // 官方玩家社区与交流群配置
