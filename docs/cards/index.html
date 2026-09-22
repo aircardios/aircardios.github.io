@@ -161,25 +161,56 @@
       </p>
     </div>
 
-    <!-- 制作个性卡面专属推荐横幅 -->
-    <div class="max-w-4xl mx-auto mb-10 p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-brand-900/40 via-indigo-950/40 to-slate-900/60 border border-brand-500/30 shadow-xl backdrop-blur-xl relative overflow-hidden group">
-      <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-brand-500/10 rounded-full blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700"></div>
-      <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 text-left">
-        <div class="space-y-2">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30">
-            <span class="animate-pulse">✨</span> 灵感工坊 · 自由定制
+    <!-- 制作个性卡面专属推荐横幅 (现代简约风格) -->
+    <div class="max-w-4xl mx-auto mb-10 p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-200/90 dark:border-slate-800/90 shadow-sm hover:shadow-md transition-all duration-300 relative overflow-hidden group">
+      <!-- 柔和的极简环境微光 -->
+      <div class="absolute -right-16 -top-16 w-56 h-56 bg-brand-500/5 dark:bg-brand-500/10 rounded-full blur-3xl pointer-events-none group-hover:scale-110 transition-transform duration-500"></div>
+
+      <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <!-- 左侧文案与特性 -->
+        <div class="space-y-3 max-w-xl">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-[11px] font-semibold bg-brand-50 dark:bg-brand-950/80 text-brand-600 dark:text-brand-400 border border-brand-200/60 dark:border-brand-800/60">
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+              灵感工坊
+            </span>
+            <span class="text-xs text-slate-400 dark:text-slate-500">·</span>
+            <span class="text-xs text-slate-500 dark:text-slate-400 font-medium">ISO 7810 ID-1 标准规范</span>
           </div>
-          <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">
-            找不到心仪卡面？来亲手打造专属 Apple Pay 卡面！
-          </h2>
-          <p class="text-xs sm:text-sm text-slate-300 max-w-xl leading-relaxed">
-            支持自定义图片上传、6 款预设高级质感皮肤、实时 3D 视差与光斑反射，一键点对点导出 1536×969 原生超清 PNG。
-          </p>
+
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">
+              亲手打造专属 Apple Pay 卡面
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              纯前端本地图片处理，支持背景裁剪、参考图对位、Logo 智能去底色与外描边，一键点对点导出 1536×969 超清原画。
+            </p>
+          </div>
+
+          <!-- 极简特性标签点缀 -->
+          <div class="flex flex-wrap items-center gap-2 pt-1 text-[11px] text-slate-500 dark:text-slate-400">
+            <span class="inline-flex items-center gap-1 bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 3.18mm 原生圆角
+            </span>
+            <span class="inline-flex items-center gap-1 bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span> 6 款高级质感皮肤
+            </span>
+            <span class="inline-flex items-center gap-1 bg-slate-100 dark:bg-slate-800/80 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">
+              <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> 像素级位置微调
+            </span>
+          </div>
         </div>
-        <a href="custom.html" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-500 to-indigo-600 hover:from-brand-600 hover:to-indigo-700 text-white font-bold text-sm shadow-lg shadow-brand-500/25 hover:shadow-brand-500/40 hover:-translate-y-0.5 transition-all shrink-0">
-          <span>🎨 立即制作个性卡面</span>
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-        </a>
+
+        <!-- 右侧 CTA 行动区 -->
+        <div class="flex sm:flex-col items-center sm:items-end justify-between sm:justify-center gap-3 shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-slate-100 dark:border-slate-800">
+          <a href="custom.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-900 font-semibold text-xs sm:text-sm shadow-sm hover:shadow transition-all group/btn">
+            <span>开始在线制作</span>
+            <svg class="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+          <span class="text-[11px] text-slate-400 dark:text-slate-500 font-normal">
+            免上传 · 本地安全处理
+          </span>
+        </div>
       </div>
     </div>
 
