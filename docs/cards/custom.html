@@ -1,0 +1,1776 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>制作个性卡面 · AirCard 灵感工坊 · ISO 7810 ID-1 标准 Apple Pay 钱包卡面生成器</title>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-99TQD75VX7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-99TQD75VX7');
+  </script>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="按 ISO 7810 ID-1 标准在线制作个性 Apple Pay 卡面的纯前端开源工具。支持自定义卡面与参考图对位、智能图片裁剪、多 Logo 图层拖放与旋转微调、去除底色及外描边，点对点无损导出 1536×969 苹果原生超清卡面。">
+  <meta name="keywords" content="Apple Pay 卡面制作, 自定义卡面生成器, 苹果钱包卡面 DIY, 制作个性卡面, aircard 卡面制作, 1536x969 卡面导出, ISO 7810 ID-1, card-design-generator">
+  <meta name="author" content="AirCard iOS">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://aircardios.github.io/cards/custom.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎴</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:site_name" content="AirCard 🎴 中文官网">
+  <meta property="og:title" content="制作个性卡面 · AirCard 灵感工坊 · ISO 7810 ID-1 标准 Apple Pay 钱包卡面生成器">
+  <meta property="og:description" content="纯前端本地图片处理，支持背景裁剪、参考图对位、多 Logo 图层拖拽微调、去底色描边，一键导出 1536×969 苹果原生超清卡面。">
+  <meta property="og:url" content="https://aircardios.github.io/cards/custom.html">
+
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "AirCard Apple Pay 个性卡面制作工坊",
+    "description": "按 ISO 7810 ID-1 标准在线设计 Apple 钱包卡面，支持图片居中裁剪、参考图对位、Logo 智能去底色描边，纯本地导出 1536×969 PNG。",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CNY"
+    }
+  }
+  </script>
+
+  <!-- 防白屏主题预载脚本 -->
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
+
+  <!-- TailwindCSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+              400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+              800: '#3730a3', 900: '#312e81', 950: '#1e1b4b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google 字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../js/config.js"></script>
+
+  <style>
+    /* ============================================================
+       工作台与设计令牌 (兼容浅色与深色模式)
+       ============================================================ */
+    :root {
+      --ink: #17243D;
+      --ink-2: #2B3A55;
+      --steel: #6B7A94;
+      --steel-2: #94A3B8;
+      --rule: #E2E8F0;
+      --rule-strong: #CBD5E1;
+      --panel: #FFFFFF;
+      --fill-soft: #F8FAFC;
+      --hover: #F1F5F9;
+      --hover-row: #F8FAFC;
+      --signal: #0284C7;
+      --signal-soft: #F0F9FF;
+      --signal-rule: #BAE6FD;
+      --copper: #B45309;
+      --copper-soft: #FEF3C7;
+      --danger: #DC2626;
+      --radius: 8px;
+      --radius-surface: 14px;
+      --shadow-card: 0 16px 36px -8px rgba(15, 23, 42, 0.18), 0 0 0 1px rgba(15, 23, 42, 0.06);
+      --shadow-pop: 0 20px 48px -10px rgba(15, 23, 42, 0.28);
+      --fs-xs: 11px;
+      --fs-sm: 12px;
+      --fs-md: 13px;
+      --fs-body: 14px;
+      --fs-title: 16px;
+    }
+
+    .dark {
+      --ink: #F1F5F9;
+      --ink-2: #CBD5E1;
+      --steel: #94A3B8;
+      --steel-2: #64748B;
+      --rule: #334155;
+      --rule-strong: #475569;
+      --panel: #0F172A;
+      --fill-soft: #1E293B;
+      --hover: #1E293B;
+      --hover-row: #1E293B;
+      --signal: #38BDF8;
+      --signal-soft: rgba(56, 189, 248, 0.12);
+      --signal-rule: rgba(56, 189, 248, 0.28);
+      --copper: #F59E0B;
+      --copper-soft: rgba(245, 158, 11, 0.12);
+      --shadow-card: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.08);
+      --shadow-pop: 0 24px 56px -12px rgba(0, 0, 0, 0.65);
+    }
+
+    /* ---------- 工作台布局 ---------- */
+    .studio-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 380px;
+      gap: 24px;
+      max-width: 1440px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .studio-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .studio-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      font-size: var(--fs-md);
+      font-weight: 600;
+      border-radius: var(--radius);
+      border: 1px solid var(--rule-strong);
+      background: var(--panel);
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .studio-btn:hover {
+      background: var(--hover);
+      border-color: var(--steel-2);
+    }
+    .studio-btn.solid {
+      background: #4f46e5;
+      border-color: #4338ca;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.25);
+    }
+    .studio-btn.solid:hover {
+      background: #4338ca;
+    }
+    .studio-btn.quiet {
+      border-color: transparent;
+      background: transparent;
+      color: var(--steel);
+    }
+    .studio-btn.quiet:hover {
+      background: var(--hover);
+      color: var(--ink);
+    }
+
+    /* ---------- 左：工作台 ---------- */
+    .bench {
+      padding: 0;
+      position: sticky;
+      top: 84px;
+    }
+    @media (max-width: 1024px) {
+      .bench {
+        position: static;
+      }
+    }
+
+    .stage-shell {
+      background: var(--panel);
+      background-image: radial-gradient(var(--rule) .9px, transparent .9px);
+      background-size: 12px 12px;
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-surface);
+      padding: 32px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
+    }
+    @media (max-width: 640px) {
+      .stage-shell {
+        padding: 16px 12px;
+        min-height: 280px;
+      }
+    }
+
+    #stage {
+      display: block;
+      max-width: 100%;
+      max-height: 64vh;
+      box-shadow: var(--shadow-card);
+      touch-action: none;
+      /* ISO 7810 ID-1 圆角 3.18mm：横向 3.18/85.6，纵向 3.18/53.98 */
+      border-radius: 3.72% / 5.89%;
+      outline: 1px solid rgba(23, 36, 61, 0.12);
+      outline-offset: -1px;
+      transition: border-radius 0.18s ease;
+    }
+    #stage.sharp {
+      border-radius: 0;
+    }
+
+    /* 空状态 */
+    .empty-prompt {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      text-align: center;
+      padding: 24px;
+      pointer-events: none;
+    }
+    .empty-prompt .big {
+      font-size: var(--fs-title);
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .empty-prompt .small {
+      font-size: var(--fs-sm);
+      color: var(--steel);
+      max-width: 360px;
+      line-height: 1.6;
+    }
+    .empty-prompt .studio-btn {
+      pointer-events: auto;
+      margin-top: 14px;
+    }
+
+    /* 勾选框 */
+    .chk-line {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      user-select: none;
+      min-height: 24px;
+      font-size: var(--fs-sm);
+      color: var(--steel);
+    }
+    .chk-line input {
+      width: 15px;
+      height: 15px;
+      accent-color: #4f46e5;
+      margin: 0;
+      flex: 0 0 auto;
+    }
+
+    /* ---------- 右：控制列 ---------- */
+    .rail {
+      background: var(--panel);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-surface);
+      overflow: hidden;
+      box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.04);
+    }
+    .sect {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .sect:last-child {
+      border-bottom: 0;
+    }
+    .sect-h {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .sect-h h2 {
+      margin: 0;
+      font-size: var(--fs-md);
+      font-weight: 700;
+      letter-spacing: .015em;
+      color: var(--ink);
+    }
+    .sect-h .aux {
+      font-size: var(--fs-xs);
+      color: var(--steel);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* 上传投放区 */
+    .drop {
+      border: 1px dashed var(--rule-strong);
+      border-radius: var(--radius);
+      padding: 18px 14px;
+      text-align: center;
+      color: var(--steel);
+      cursor: pointer;
+      transition: .15s;
+      background: var(--fill-soft);
+    }
+    .drop.drag {
+      border-color: #4f46e5;
+      background: rgba(79, 70, 229, 0.08);
+      color: #4f46e5;
+    }
+    @media (hover: hover) {
+      .drop:hover {
+        border-color: #4f46e5;
+        background: rgba(79, 70, 229, 0.05);
+        color: #4f46e5;
+      }
+    }
+    .drop .t {
+      font-size: var(--fs-md);
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .drop .s {
+      font-size: var(--fs-xs);
+      margin-top: 3px;
+    }
+    .drop.drag .t {
+      color: #4f46e5;
+    }
+
+    /* 调整面板 */
+    .sel-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      margin-bottom: 14px;
+      background: var(--signal-soft);
+      border-radius: var(--radius);
+      border: 1px solid var(--signal-rule);
+    }
+    .sel-bar .nm {
+      flex: 1;
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--signal);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .mini-btn {
+      width: 26px;
+      height: 26px;
+      border-radius: var(--radius);
+      display: grid;
+      place-items: center;
+      color: var(--signal);
+      transition: .12s;
+      flex: 0 0 auto;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+    }
+    .mini-btn:hover {
+      background: var(--signal-rule);
+    }
+    .mini-btn.warn {
+      color: var(--danger);
+    }
+    .mini-btn.warn:hover {
+      background: rgba(220, 38, 38, 0.15);
+    }
+
+    .field {
+      margin-bottom: 12px;
+    }
+    .field-h {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: var(--fs-xs);
+      font-weight: 500;
+      color: var(--steel);
+      margin-bottom: 4px;
+    }
+    .field-h .v {
+      color: var(--ink);
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
+    }
+    input[type=range] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 24px;
+      background: transparent;
+      cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      height: 4px;
+      border-radius: 2px;
+      background: var(--rule-strong);
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #4f46e5;
+      border: 2px solid #ffffff;
+      margin-top: -5px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    input[type=color] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 36px;
+      height: 28px;
+      padding: 0;
+      flex: 0 0 auto;
+      border: 1px solid var(--rule-strong);
+      border-radius: var(--radius);
+      background: var(--panel);
+      cursor: pointer;
+    }
+    input[type=color]::-webkit-color-swatch-wrapper {
+      padding: 2px;
+    }
+    input[type=color]::-webkit-color-swatch {
+      border: none;
+      border-radius: 2px;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--rule);
+      margin: 14px 0;
+    }
+    .hint-box {
+      font-size: var(--fs-xs);
+      color: var(--steel);
+      line-height: 1.6;
+      background: var(--fill-soft);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 8px 10px;
+      margin-top: 10px;
+    }
+
+    /* 图层 */
+    .layers {
+      max-height: 240px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .layer-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 8px;
+      border-radius: var(--radius);
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: var(--fs-sm);
+    }
+    .layer-item:hover {
+      background: var(--hover-row);
+    }
+    .layer-item[aria-selected="true"] {
+      background: var(--signal-soft);
+      border-color: var(--signal-rule);
+    }
+    .layer-item .th {
+      width: 34px;
+      height: 22px;
+      border-radius: 4px;
+      background: #fff;
+      border: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      flex: 0 0 auto;
+    }
+    .layer-item .th img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .layer-item .nm {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 500;
+      color: var(--ink);
+    }
+    .layer-item .nm small {
+      font-size: 10px;
+      color: var(--steel);
+    }
+
+    /* ---------- 模态弹窗 ---------- */
+    .studio-mask {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+    }
+    .studio-modal {
+      background: var(--panel);
+      border-radius: var(--radius-surface);
+      box-shadow: var(--shadow-pop);
+      width: 100%;
+      max-width: 700px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--rule);
+    }
+    .modal-h {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--rule);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 0 0 auto;
+    }
+    .modal-b {
+      padding: 16px 20px;
+      overflow-y: auto;
+      font-size: var(--fs-body);
+      line-height: 1.7;
+      color: var(--ink-2);
+    }
+    .modal-f {
+      padding: 12px 20px;
+      border-top: 1px solid var(--rule);
+      background: var(--fill-soft);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+    }
+
+    /* Toast */
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(14px);
+      background: #1e1b4b;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 9999px;
+      font-size: var(--fs-md);
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: .22s ease;
+      z-index: 200;
+      box-shadow: var(--shadow-pop);
+      max-width: calc(100vw - 32px);
+      text-align: center;
+    }
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-[#090d16] text-slate-800 dark:text-slate-100 font-sans antialiased min-h-screen relative overflow-x-hidden transition-colors duration-300">
+
+  <!-- 科技微光背景光斑 -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-ambient-light dark:bg-ambient-dark"></div>
+
+  <!-- SVG 图标精灵 -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></symbol>
+      <symbol id="i-crop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2v14.5A2.5 2.5 0 009 19h11.5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M2 6.5h14.5A2.5 2.5 0 0119 9v11.5"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4.5-4.5M12 16l4.5-4.5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 15v3a2 2 0 002 2h12a2 2 0 002-2v-3"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6.5h16M9.5 6.5V4h5v2.5"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5l1 13a1.5 1.5 0 001.5 1.5h6a1.5 1.5 0 001.5-1.5l1-13"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M10.5 10.5v6M13.5 10.5v6"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5.5v13M5.5 12h13"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 14.5l6-6 6 6"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9.5l6 6 6-6"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3l7.5 3v6c0 4.2-3.1 7.9-7.5 9-4.4-1.1-7.5-4.8-7.5-9V6L12 3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 8.5v4.5"/></symbol>
+      <symbol id="i-refit" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5.5A1.5 1.5 0 015.5 4H9"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 4h3.5A1.5 1.5 0 0120 5.5V9"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 15v3.5a1.5 1.5 0 01-1.5 1.5H15"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 20H5.5A1.5 1.5 0 014 18.5V15"/></symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.286L13 21l-2.286-6.857L5 12l5.714-2.286L13 3z"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- 顶部统一导航栏 -->
+  <header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-[#090d16]/80 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+      <a href="../index.html" class="flex items-center gap-3 group text-slate-900 dark:text-white shrink-0">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyan-500 flex items-center justify-center text-xl text-white shadow-md shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+          🎴
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="text-xl font-bold tracking-tight">AirCard</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hidden sm:inline-block">
+            灵感工坊
+          </span>
+        </div>
+      </a>
+
+      <!-- 导航链接 (桌面端: lg 以上完整展示 7 项) -->
+      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="../index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官网首页</a>
+        <a href="../cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
+        <a href="../cards/custom.html" class="text-brand-600 dark:text-brand-400 font-bold border-b-2 border-brand-600 dark:border-brand-400 pb-0.5">制作个性卡面</a>
+        <a href="../pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
+        <a href="../tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
+        <a href="../download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
+        <a href="../community.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官方社区</a>
+      </nav>
+
+      <!-- 导航操作区 -->
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button id="btnLegal" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">
+          <svg class="w-3.5 h-3.5"><use href="#i-shield"/></svg>
+          <span>法律声明</span>
+        </button>
+
+        <button id="themeToggleBtn" aria-label="切换浅色/深色模式"
+          class="p-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all shadow-sm">
+          <span id="themeIcon">🌓</span>
+        </button>
+
+        <a href="../download.html"
+          class="hidden sm:inline-flex items-center gap-1.5 px-4 py-2 text-xs sm:text-sm font-semibold rounded-full bg-brand-600 hover:bg-brand-700 text-white shadow-md shadow-brand-600/25 transition-all">
+          <span>⬇️ 下载客户端</span>
+        </a>
+
+        <!-- 移动端汉堡菜单 -->
+        <button class="lg:hidden menu-toggle p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" aria-label="展开菜单">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- 移动端抽屉菜单 -->
+    <div id="mobileMenu" class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
+      <a href="../index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官网首页</a>
+      <a href="../cards/index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版</a>
+      <a href="../cards/custom.html" class="block px-3 py-2 rounded-lg text-base font-medium text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40">制作个性卡面</a>
+      <a href="../pass-themes/index.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">锁屏按键</a>
+      <a href="../tutorial.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">使用教程</a>
+      <a href="../download.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">下载中心</a>
+      <a href="../community.html" class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">官方社区</a>
+    </div>
+  </header>
+
+  <!-- 主页面容器 -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10">
+
+    <!-- 顶部标题区 -->
+    <div class="max-w-4xl mx-auto text-center mb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-50 dark:bg-brand-950/70 text-brand-600 dark:text-brand-400 border border-brand-200 dark:border-brand-800 mb-3">
+        <svg class="w-3.5 h-3.5"><use href="#i-sparkles"/></svg>
+        <span>ISO 7810 ID-1 标准规范 · 纯前端本地安全处理 · 原生 1536×969 超清</span>
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+        制作专属 <span class="bg-gradient-to-r from-brand-600 to-cyan-500 bg-clip-text text-transparent">Apple Pay 个性卡面</span>
+      </h1>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl mx-auto">
+        上传照片或选择高级质感底色，自由添加 Logo、微调构图并去底描边，一键点对点导出超清卡面并配合 AirCard 写入钱包！
+      </p>
+    </div>
+
+    <!-- 工作台容器 -->
+    <div class="studio-layout">
+
+      <!-- 左侧：工作台预览区 -->
+      <section class="bench space-y-4">
+        <div class="flex items-center justify-between px-1">
+          <div class="flex items-center gap-2">
+            <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">卡面预览与排版</span>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">85.60 × 53.98 mm (1.586 : 1)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button class="studio-btn quiet text-xs py-1 px-2.5" id="btnCropOpen">
+              <svg class="w-3.5 h-3.5"><use href="#i-crop"/></svg>
+              <span>裁剪构图</span>
+            </button>
+            <button class="studio-btn solid text-xs py-1.5 px-4 shadow-sm" id="btnExport">
+              <svg class="w-3.5 h-3.5"><use href="#i-download"/></svg>
+              <span>导出超清 PNG</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 舞台画布外壳 -->
+        <div class="stage-shell" id="stageShell">
+          <canvas id="stage" width="1536" height="969"></canvas>
+          <div class="empty-prompt" id="emptyState">
+            <div class="big">上传图片或选择预设质感皮肤</div>
+            <div class="small">自动锁定 ISO 7810 标准卡面比例并居中匹配，支持添加 Logo、参考图对位与去底色。</div>
+            <div class="flex flex-wrap items-center justify-center gap-2 mt-3">
+              <button class="studio-btn solid" id="btnUploadEmpty">
+                <svg class="w-4 h-4"><use href="#i-upload"/></svg>
+                <span>上传本地图片</span>
+              </button>
+              <button class="studio-btn" id="btnQuickPreset">
+                <svg class="w-4 h-4"><use href="#i-sparkles"/></svg>
+                <span>套用预设底色</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 舞台底部选项 -->
+        <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 px-1 flex-wrap gap-2">
+          <label class="chk-line">
+            <input type="checkbox" id="roundedChk" checked>
+            <span>按 3.18 mm 圆角呈现（导出保持同步）</span>
+          </label>
+          <button class="studio-btn quiet text-xs py-1 px-2 text-rose-500 hover:text-rose-600" id="btnClear">
+            <svg class="w-3.5 h-3.5"><use href="#i-trash"/></svg>
+            <span>清空重置</span>
+          </button>
+        </div>
+
+        <!-- 6 款官方质感皮肤快捷选择栏 -->
+        <div class="p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-sm space-y-2">
+          <div class="flex items-center justify-between text-xs font-semibold text-slate-700 dark:text-slate-300">
+            <span>✨ 官方高级质感皮肤预设（点击即刻换装）</span>
+            <span class="text-[10px] text-brand-600 dark:text-brand-400 font-normal">支持覆盖或在此之上叠放 Logo</span>
+          </div>
+          <div class="grid grid-cols-3 sm:grid-cols-6 gap-2">
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="obsidian">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-br from-slate-900 via-neutral-800 to-black shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">钛金曜石</span>
+            </button>
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="aurora">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-tr from-indigo-900 via-purple-900 to-pink-700 shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">极光渐变</span>
+            </button>
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="sunset">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-br from-amber-700 via-rose-700 to-slate-900 shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">日落熔金</span>
+            </button>
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="gold">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-br from-amber-200 via-yellow-400 to-amber-600 shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">香槟贵金属</span>
+            </button>
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="cyber">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-tr from-cyan-900 via-blue-900 to-indigo-950 shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">午夜幽蓝</span>
+            </button>
+            <button class="skin-btn p-2 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-brand-500 transition-all text-left flex flex-col items-center gap-1.5" data-preset="titanium">
+              <div class="w-full h-8 rounded-lg bg-gradient-to-br from-slate-700 via-slate-600 to-slate-800 shadow-inner"></div>
+              <span class="text-[11px] font-medium text-slate-700 dark:text-slate-300 truncate">深空灰钛</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- AirCard 联动说明卡片 -->
+        <div class="p-5 rounded-2xl bg-gradient-to-r from-brand-900/30 via-indigo-950/20 to-slate-900/30 border border-brand-500/20 shadow-sm text-xs leading-relaxed space-y-2">
+          <div class="flex items-center gap-2 text-brand-600 dark:text-brand-400 font-bold">
+            <span>💡 导出后如何在 Apple Pay 中生效？</span>
+          </div>
+          <ol class="list-decimal list-inside space-y-1 text-slate-600 dark:text-slate-300">
+            <li>在当前工作台排版满意后，点击右上角<b>「导出超清 PNG」</b>，获得 1536×969 超清原画。</li>
+            <li>打开 <b>AirCard</b> 手机原生端（或连接电脑版），在已配对的设备卡片列表中选中需要更换的目标银行卡/交通卡。</li>
+            <li>点击「选择自定义卡面图片」，导入刚才保存的高清图，并点击<b>「一键写入并注销生效 (Respring)」</b>即可！</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 右侧：控制列与图层管理 -->
+      <aside class="rail space-y-0">
+
+        <!-- 分区 1：卡面图片 -->
+        <div class="sect">
+          <div class="sect-h">
+            <h2>卡面背景图片</h2>
+            <span class="aux">1.586 : 1</span>
+          </div>
+          <div class="drop" id="dropZone" role="button" tabindex="0" aria-label="上传卡面背景图片">
+            <div class="t">拖拽图片到此处，或点击选择</div>
+            <div class="s">支持 JPG、PNG、WebP、SVG</div>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-3">
+            <button class="studio-btn justify-center text-xs" id="btnFit">
+              <svg class="w-3.5 h-3.5"><use href="#i-refit"/></svg>
+              <span>重新居中匹配</span>
+            </button>
+            <button class="studio-btn justify-center text-xs" id="btnCropOpen2">
+              <svg class="w-3.5 h-3.5"><use href="#i-crop"/></svg>
+              <span>精细裁剪</span>
+            </button>
+          </div>
+          <div class="hint-box">图片会<b>等比缩放并居中</b>填满卡面，超出部分自动裁掉，始终锁定 1.586 : 1 黄金比例。</div>
+        </div>
+
+        <!-- 分区 2：参考图比对 -->
+        <div class="sect">
+          <div class="sect-h">
+            <h2>对位参考图</h2>
+            <span class="aux">不进入导出</span>
+          </div>
+          <div class="drop" id="refDrop" role="button" tabindex="0" aria-label="上传参考图">
+            <div class="t">拖拽参考图到此处，或点击选择</div>
+            <div class="s">用于对齐芯片、银行 Logo、卡号等位置</div>
+          </div>
+          <div class="grid grid-cols-2 gap-2 mt-3">
+            <button class="studio-btn justify-center text-xs" id="btnRefFit">
+              <svg class="w-3.5 h-3.5"><use href="#i-refit"/></svg>
+              <span>重配参考图</span>
+            </button>
+            <button class="studio-btn justify-center text-xs" id="btnRefCrop">
+              <svg class="w-3.5 h-3.5"><use href="#i-crop"/></svg>
+              <span>裁剪参考图</span>
+            </button>
+          </div>
+          <div id="refCtl" class="hidden mt-3 space-y-2">
+            <label class="chk-line">
+              <input type="checkbox" id="refShow" checked>
+              <span class="font-medium text-slate-800 dark:text-slate-200">显示参考图</span>
+            </label>
+            <div class="field-h">
+              <span>参考图透明度</span>
+              <span class="v" id="refOpacityVal">40%</span>
+            </div>
+            <input type="range" id="refOpacityRange" min="0" max="100" step="1" value="40">
+          </div>
+          <div class="hint-box">参考图叠在底图之上、Logo 之下，仅用于精细对位与设计比稿，<b>绝对不会出现在导出的 PNG 里</b>。</div>
+        </div>
+
+        <!-- 分区 3：Logo 上传 -->
+        <div class="sect">
+          <div class="sect-h">
+            <h2>Logo 与图章</h2>
+            <span class="aux" id="logoCount"></span>
+          </div>
+          <div class="drop" id="logoDrop" role="button" tabindex="0" aria-label="上传 Logo 或芯片素材">
+            <div class="t">拖拽 Logo 到此处，或点击选择</div>
+            <div class="s">可一次选多个，支持 SVG、PNG、WebP</div>
+          </div>
+          <div class="hint-box">请上传你有权使用的 Logo 或芯片素材。支持鼠标拖动、滚轮缩放与方向键微调。</div>
+        </div>
+
+        <!-- 分区 4：调整当前选中 Logo -->
+        <div class="sect">
+          <div class="sect-h">
+            <h2>Logo 属性调整</h2>
+          </div>
+          <div id="objEmpty" class="text-xs text-slate-400 py-3 text-center">点击卡面上的 Logo 或右下方图层即可编辑</div>
+          <div id="objEditor" class="hidden space-y-3">
+            <div class="sel-bar">
+              <span class="nm" id="objName">Logo</span>
+              <button class="mini-btn" id="btnLayerUp" title="上移一层"><svg class="w-3.5 h-3.5"><use href="#i-up"/></svg></button>
+              <button class="mini-btn" id="btnLayerDown" title="下移一层"><svg class="w-3.5 h-3.5"><use href="#i-down"/></svg></button>
+              <button class="mini-btn warn" id="btnDelete" title="删除"><svg class="w-3.5 h-3.5"><use href="#i-trash"/></svg></button>
+            </div>
+
+            <div class="field">
+              <div class="field-h"><span>大小缩放</span><span class="v" id="sizeVal">100%</span></div>
+              <input type="range" id="sizeRange" min="5" max="300" step="1" value="100">
+            </div>
+
+            <div class="field">
+              <div class="field-h"><span>不透明度</span><span class="v" id="opacityVal">100%</span></div>
+              <input type="range" id="opacityRange" min="0" max="100" step="1" value="100">
+            </div>
+
+            <div class="field">
+              <div class="field-h"><span>旋转角度</span><span class="v" id="rotateVal">0°</span></div>
+              <input type="range" id="rotateRange" min="-180" max="180" step="1" value="0">
+            </div>
+
+            <div class="divider"></div>
+
+            <label class="chk-line">
+              <input type="checkbox" id="bgRemove">
+              <span class="font-medium text-slate-800 dark:text-slate-200">去除白色背景底色</span>
+            </label>
+            <div class="field hidden" id="toleranceField">
+              <div class="field-h"><span>去底容差</span><span class="v" id="tolVal">24</span></div>
+              <input type="range" id="toleranceRange" min="1" max="120" step="1" value="24">
+            </div>
+
+            <div class="divider"></div>
+
+            <label class="chk-line">
+              <input type="checkbox" id="strokeOn">
+              <span class="font-medium text-slate-800 dark:text-slate-200">轮廓外描边</span>
+            </label>
+            <div id="strokeFields" class="hidden space-y-2">
+              <div class="field">
+                <div class="field-h"><span>描边宽度</span><span class="v" id="strokeVal">6 px</span></div>
+                <input type="range" id="strokeRange" min="0" max="40" step="1" value="6">
+              </div>
+              <div class="field">
+                <div class="field-h"><span>描边颜色</span><span class="v" id="strokeColorVal">#FFFFFF</span></div>
+                <div class="flex items-center gap-3">
+                  <input type="color" id="strokeColor" value="#FFFFFF" title="选择描边颜色">
+                  <label class="chk-line">
+                    <input type="checkbox" id="strokeAuto">
+                    <span>自动对比色</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 分区 5：图层列表 -->
+        <div class="sect">
+          <div class="sect-h">
+            <h2>图层管理器</h2>
+            <span class="aux" id="layerCount"></span>
+          </div>
+          <div class="layers" id="layerList"></div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- 裁剪模态弹窗 -->
+  <div class="studio-mask hidden" id="cropModal" role="dialog" aria-modal="true" aria-labelledby="cropTitle">
+    <div class="studio-modal">
+      <div class="modal-h">
+        <span class="p-1.5 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400">
+          <svg class="w-5 h-5"><use href="#i-crop"/></svg>
+        </span>
+        <div>
+          <h3 id="cropTitle" class="font-bold text-slate-900 dark:text-white text-base">裁剪卡面图片</h3>
+          <div class="text-xs text-slate-500 dark:text-slate-400">拖动裁剪框调整构图，拖拽四角缩放选区；锁定 1.586 : 1 比例</div>
+        </div>
+        <div class="grow"></div>
+        <button class="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" id="cropClose" aria-label="关闭">
+          <svg class="w-5 h-5"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <div class="modal-b">
+        <div id="cropStage" class="bg-slate-100 dark:bg-slate-900 rounded-xl flex items-center justify-center min-h-[300px] overflow-hidden">
+          <canvas id="cropCanvas"></canvas>
+        </div>
+      </div>
+      <div class="modal-f">
+        <div class="grow text-xs text-slate-500 dark:text-slate-400 font-mono" id="cropReadout"></div>
+        <button class="studio-btn" id="cropCancel">取消</button>
+        <button class="studio-btn solid" id="cropApply">
+          <svg class="w-4 h-4"><use href="#i-check"/></svg>
+          <span>应用裁剪</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 法律声明模态弹窗 -->
+  <div class="studio-mask hidden" id="legalModal" role="dialog" aria-modal="true" aria-labelledby="legalTitle">
+    <div class="studio-modal" style="max-width: 680px;">
+      <div class="modal-h">
+        <span class="p-1.5 rounded-lg bg-amber-50 dark:bg-amber-950/60 text-amber-600 dark:text-amber-400">
+          <svg class="w-5 h-5"><use href="#i-shield"/></svg>
+        </span>
+        <div>
+          <h3 id="legalTitle" class="font-bold text-slate-900 dark:text-white text-base">使用条款与免责声明</h3>
+          <div class="text-xs text-slate-500 dark:text-slate-400">ISO 7810 ID-1 纯前端卡面视觉设计工具声明</div>
+        </div>
+        <div class="grow"></div>
+        <button class="p-1 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200" id="legalClose">
+          <svg class="w-5 h-5"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <div class="modal-b text-xs sm:text-sm space-y-3" id="legalBody">
+        <div class="p-3 rounded-lg bg-amber-500/10 border-l-4 border-amber-500 text-slate-700 dark:text-slate-300">
+          本项目是一个纯前端的通用 ID-1 卡面设计工具：你自行上传图片、Logo 与文字，在本地完成排版并导出静态 PNG。本项目不生成真实支付卡，也不处理卡号、CVV、有效期、PIN 或任何账户信息。
+        </div>
+        <h4 class="font-bold text-slate-900 dark:text-white">一、独立的开源工具</h4>
+        <p>本项目为独立的开源卡面设计工具，与 Apple、Apple Pay、Visa、Mastercard 及任何发卡机构不存在官方合作、授权、隶属或背书关系。第三方商标及相关知识产权归各自权利人所有。</p>
+        <h4 class="font-bold text-slate-900 dark:text-white">二、上传内容责任</h4>
+        <p>你上传的图片、Logo 与文字由你负责。若包含他人商标或美术作品，你应确保具有适当法律依据或已获授权。本工具完全在浏览器本地运行，图片与卡面绝不会上传至任何服务器。</p>
+        <h4 class="font-bold text-slate-900 dark:text-white">三、禁止用途</h4>
+        <p>不得将本工具或其输出用于欺诈、身份冒用或伪造金融/交通官方凭证等违法违规行为。用于设计稿、艺术卡等非凭证用途不受此限。</p>
+      </div>
+      <div class="modal-f justify-end">
+        <button class="studio-btn solid" id="legalConfirm">我已知晓并同意</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast 提示容器 -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- 隐藏的文件选择器 -->
+  <input type="file" id="fileImg" accept="image/*" class="hidden">
+  <input type="file" id="fileRef" accept="image/*" class="hidden">
+  <input type="file" id="fileLogo" accept="image/svg+xml,image/png,image/jpeg,image/webp" multiple class="hidden">
+
+  <!-- 底部页脚 -->
+  <footer class="border-t border-slate-200/80 dark:border-slate-800/80 mt-20 py-10 bg-white/50 dark:bg-slate-900/50 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-700 dark:text-slate-300">AirCard 🎴 中文知识库</span>
+        <span>·</span>
+        <span>纯前端设计工坊 · 保护用户隐私</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-brand-600 transition-colors">卡面模版库</a>
+        <a href="../tutorial.html" class="hover:text-brand-600 transition-colors">免越狱教程</a>
+        <a href="../download.html" class="hover:text-brand-600 transition-colors">下载客户端</a>
+        <button id="btnLegalFooter" class="hover:text-brand-600 transition-colors underline">法律声明</button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 核心交互逻辑与 Canvas 绘图引擎 (参考 index.html) -->
+  <script>
+    "use strict";
+
+    /* ================= 常量定义 ================= */
+    const RATIO = 85.60 / 53.98; // ISO 7810 ID-1 标准宽高比
+    const EXPORT_W = 1536, EXPORT_H = 969;
+    const STROKE_LIGHT = "#FFFFFF", STROKE_DARK = "#17243D";
+
+    const state = {
+      bgImage: null, bgSource: null, hasBg: false,
+      refImage: null, refSource: null, hasRef: false, refOn: true, refOpacity: 0.4,
+      logos: [], selected: null, hover: null,
+      dragging: false, dragId: null, dragOffX: 0, dragOffY: 0,
+      rounded: true,
+      cropTarget: "bg", // 裁剪作用目标："bg" 或 "ref"
+    };
+
+    const $ = id => document.getElementById(id);
+    const canvas = $("stage");
+    const ctx = canvas.getContext("2d");
+
+    /* ================= 辅助工具函数 ================= */
+    function toast(msg) {
+      const el = $("toast");
+      el.textContent = msg;
+      el.classList.add("show");
+      clearTimeout(el._t);
+      el._t = setTimeout(() => el.classList.remove("show"), 2200);
+    }
+    const clamp = (v, a, b) => v < a ? a : (v > b ? b : v);
+    const deg2rad = d => d * Math.PI / 180;
+    let _seq = 0;
+    const nid = () => "lg" + (++_seq);
+
+    function loadImage(src) {
+      return new Promise((res, rej) => {
+        const img = new Image();
+        img.onload = () => res(img);
+        img.onerror = () => rej(new Error("load fail"));
+        img.src = src;
+      });
+    }
+
+    function fitImageToCard(img) {
+      const c = document.createElement("canvas");
+      c.width = EXPORT_W; c.height = EXPORT_H;
+      const cx = c.getContext("2d");
+      cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = "high";
+      const iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
+      const s = Math.max(EXPORT_W / iw, EXPORT_H / ih);
+      const dw = iw * s, dh = ih * s;
+      cx.drawImage(img, (EXPORT_W - dw) / 2, (EXPORT_H - dh) / 2, dw, dh);
+      return c;
+    }
+
+    /* ================= 背景图与参考图处理 ================= */
+    async function handleImageFile(file) {
+      if (!file) return;
+      if (!/^image\//.test(file.type)) { toast("请选择图片文件"); return; }
+      try {
+        const url = URL.createObjectURL(file);
+        const img = await loadImage(url);
+        state.bgSource = img;
+        state.bgImage = fitImageToCard(img);
+        state.hasBg = true;
+        $("emptyState").classList.add("hidden");
+        render();
+        toast("卡面背景已加载并居中");
+      } catch (e) {
+        toast("图片加载失败，请重试");
+      }
+    }
+
+    async function handleRefFile(file) {
+      if (!file) return;
+      if (!/^image\//.test(file.type)) { toast("请选择图片文件"); return; }
+      try {
+        const url = URL.createObjectURL(file);
+        const img = await loadImage(url);
+        state.refSource = img;
+        state.refImage = fitImageToCard(img);
+        state.hasRef = true;
+        syncRefCtl();
+        render();
+        toast("参考图已载入（不进入导出）");
+      } catch (e) {
+        toast("参考图加载失败，请重试");
+      }
+    }
+
+    function syncRefCtl() {
+      $("refCtl").classList.toggle("hidden", !state.hasRef);
+    }
+
+    /* ================= 6 款官方质感皮肤预设 ================= */
+    function applySkinPreset(presetName) {
+      const c = document.createElement("canvas");
+      c.width = EXPORT_W; c.height = EXPORT_H;
+      const cx = c.getContext("2d");
+      let grad;
+
+      if (presetName === "obsidian") { // 钛金曜石
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#18181b");
+        grad.addColorStop(0.5, "#27272a");
+        grad.addColorStop(1, "#09090b");
+      } else if (presetName === "aurora") { // 极光渐变
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#1e1b4b");
+        grad.addColorStop(0.5, "#581c87");
+        grad.addColorStop(1, "#be185d");
+      } else if (presetName === "sunset") { // 日落熔金
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#b45309");
+        grad.addColorStop(0.5, "#9f1239");
+        grad.addColorStop(1, "#0f172a");
+      } else if (presetName === "gold") { // 香槟贵金属
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#fde68a");
+        grad.addColorStop(0.5, "#fbbf24");
+        grad.addColorStop(1, "#d97706");
+      } else if (presetName === "cyber") { // 午夜幽蓝
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#0c4a6e");
+        grad.addColorStop(0.5, "#1e3a8a");
+        grad.addColorStop(1, "#090d16");
+      } else { // titanium 深空灰钛
+        grad = cx.createLinearGradient(0, 0, EXPORT_W, EXPORT_H);
+        grad.addColorStop(0, "#334155");
+        grad.addColorStop(0.5, "#475569");
+        grad.addColorStop(1, "#1e293b");
+      }
+
+      cx.fillStyle = grad;
+      cx.fillRect(0, 0, EXPORT_W, EXPORT_H);
+
+      // 绘制细腻的金属拉丝/光泽纹理
+      cx.fillStyle = "rgba(255, 255, 255, 0.04)";
+      for (let y = 0; y < EXPORT_H; y += 4) {
+        cx.fillRect(0, y, EXPORT_W, 1);
+      }
+
+      state.bgSource = c;
+      state.bgImage = c;
+      state.hasBg = true;
+      $("emptyState").classList.add("hidden");
+      render();
+      toast("已套用预设质感皮肤");
+    }
+
+    /* ================= Logo 管理与去底色算法 ================= */
+    async function addLogoFiles(files) {
+      if (!files || !files.length) return;
+      for (const f of files) {
+        if (!/^image\//.test(f.type)) continue;
+        try {
+          const url = URL.createObjectURL(f);
+          const img = await loadImage(url);
+          const defScale = clamp(240 / (img.naturalWidth || 200), 0.1, 1.5);
+          const logo = {
+            id: nid(), name: f.name.replace(/\.[^.]+$/, ""),
+            img, srcUrl: url,
+            x: EXPORT_W / 2, y: EXPORT_H / 2,
+            baseW: img.naturalWidth || img.width,
+            baseH: img.naturalHeight || img.height,
+            scale: defScale, rotation: 0, opacity: 1,
+            removeBg: false, tolerance: 24, processed: null,
+            strokeOn: false, strokeWidth: 6, strokeColor: STROKE_LIGHT, strokeAuto: false,
+          };
+          state.logos.push(logo);
+          select(logo.id);
+        } catch (e) {}
+      }
+      renderLayers(); render();
+      toast("Logo 已添加");
+    }
+
+    function processRemoveBg(logo) {
+      if (!logo.removeBg) { logo.processed = null; return; }
+      const c = document.createElement("canvas");
+      c.width = logo.baseW; c.height = logo.baseH;
+      const cx = c.getContext("2d");
+      cx.drawImage(logo.img, 0, 0);
+      const idata = cx.getImageData(0, 0, c.width, c.height);
+      const d = idata.data;
+      // 采样四角作为背景参考色
+      const tol = logo.tolerance * 2.55;
+      const bgR = 255, bgG = 255, bgB = 255;
+      for (let i = 0; i < d.length; i += 4) {
+        const dr = Math.abs(d[i] - bgR), dg = Math.abs(d[i + 1] - bgG), db = Math.abs(d[i + 2] - bgB);
+        if (dr < tol && dg < tol && db < tol) {
+          d[i + 3] = 0;
+        }
+      }
+      cx.putImageData(idata, 0, 0);
+      logo.processed = c;
+    }
+
+    function autoStrokeColor(logo) {
+      return STROKE_LIGHT;
+    }
+
+    /* ================= 绘制外描边 ================= */
+    function makeOutline(src, width, color) {
+      const c = document.createElement("canvas");
+      const pad = width * 2;
+      c.width = src.width + pad * 2;
+      c.height = src.height + pad * 2;
+      const cx = c.getContext("2d");
+      const d = width;
+      const steps = 12;
+      for (let i = 0; i < steps; i++) {
+        const th = i * (Math.PI * 2 / steps);
+        cx.drawImage(src, pad + Math.cos(th) * d, pad + Math.sin(th) * d);
+      }
+      cx.globalCompositeOperation = "source-in";
+      cx.fillStyle = color;
+      cx.fillRect(0, 0, c.width, c.height);
+      cx.globalCompositeOperation = "source-over";
+      cx.drawImage(src, pad, pad);
+      return { canvas: c, pad };
+    }
+
+    /* ================= 选中与图层控制 ================= */
+    function select(id) {
+      state.selected = id;
+      syncEditor(); renderLayers(); render();
+    }
+    function cur() {
+      return state.logos.find(l => l.id === state.selected) || null;
+    }
+
+    function syncEditor() {
+      const logo = cur();
+      const on = !!logo;
+      $("objEmpty").classList.toggle("hidden", on);
+      $("objEditor").classList.toggle("hidden", !on);
+      if (!on) return;
+      $("objName").textContent = logo.name;
+      $("sizeRange").value = Math.round(logo.scale * 100);
+      $("sizeVal").textContent = Math.round(logo.scale * 100) + "%";
+      $("opacityRange").value = Math.round(logo.opacity * 100);
+      $("opacityVal").textContent = Math.round(logo.opacity * 100) + "%";
+      $("rotateRange").value = logo.rotation;
+      $("rotateVal").textContent = logo.rotation + "°";
+      $("bgRemove").checked = logo.removeBg;
+      $("toleranceRange").value = logo.tolerance;
+      $("tolVal").textContent = logo.tolerance;
+      $("toleranceField").classList.toggle("hidden", !logo.removeBg);
+      $("strokeOn").checked = !!logo.strokeOn;
+      $("strokeFields").classList.toggle("hidden", !logo.strokeOn);
+      $("strokeRange").value = Math.round(logo.strokeWidth || 0);
+      $("strokeVal").textContent = Math.round(logo.strokeWidth || 0) + " px";
+      $("strokeAuto").checked = !!logo.strokeAuto;
+      $("strokeColor").disabled = !!logo.strokeAuto;
+      $("strokeColor").value = logo.strokeColor || STROKE_LIGHT;
+      $("strokeColorVal").textContent = (logo.strokeColor || STROKE_LIGHT).toUpperCase();
+    }
+
+    function renderLayers() {
+      const list = $("layerList");
+      if (!list) return;
+      const n = state.logos.length;
+      $("layerCount").textContent = n ? String(n) : "";
+      $("logoCount").textContent = n ? String(n) : "";
+      list.innerHTML = "";
+      if (!n) {
+        list.innerHTML = '<div class="text-xs text-slate-400 py-2">暂无 Logo 图层</div>';
+        return;
+      }
+      for (const logo of [...state.logos].reverse()) {
+        const d = document.createElement("div");
+        d.className = "layer-item";
+        d.setAttribute("aria-selected", String(state.selected === logo.id));
+        const thumb = logo.processed ? logo.processed.toDataURL() : logo.srcUrl;
+        d.innerHTML = `
+          <div class="th"><img src="${thumb}" alt=""></div>
+          <div class="nm">${logo.name}<br><small>${Math.round(logo.scale * 100)}%</small></div>
+          <span class="text-xs text-slate-400">${logo.opacity > 0 ? "●" : "○"}</span>
+        `;
+        d.onclick = () => select(logo.id);
+        list.appendChild(d);
+      }
+    }
+
+    function deleteSelected() {
+      const i = state.logos.findIndex(l => l.id === state.selected);
+      if (i >= 0) state.logos.splice(i, 1);
+      state.selected = null; syncEditor(); renderLayers(); render();
+    }
+
+    function moveLayer(dir) {
+      const i = state.logos.findIndex(l => l.id === state.selected);
+      if (i < 0) return;
+      const j = i + dir;
+      if (j < 0 || j >= state.logos.length) return;
+      [state.logos[i], state.logos[j]] = [state.logos[j], state.logos[i]];
+      renderLayers(); render();
+    }
+
+    /* ================= 核心渲染主循环 ================= */
+    function paintCard(targetCtx, isPreview) {
+      targetCtx.clearRect(0, 0, EXPORT_W, EXPORT_H);
+
+      // 1. 绘制背景
+      if (state.hasBg && state.bgImage) {
+        targetCtx.drawImage(state.bgImage, 0, 0, EXPORT_W, EXPORT_H);
+      } else {
+        // 空白时绘制精致深色卡面
+        targetCtx.fillStyle = "#1e293b";
+        targetCtx.fillRect(0, 0, EXPORT_W, EXPORT_H);
+      }
+
+      // 2. 绘制参考图（仅在预览中展示，不导出）
+      if (isPreview && state.hasRef && state.refImage && state.refOn) {
+        targetCtx.save();
+        targetCtx.globalAlpha = state.refOpacity;
+        targetCtx.drawImage(state.refImage, 0, 0, EXPORT_W, EXPORT_H);
+        targetCtx.restore();
+      }
+
+      // 3. 绘制所有 Logo
+      for (const logo of state.logos) {
+        targetCtx.save();
+        targetCtx.translate(logo.x, logo.y);
+        if (logo.rotation) targetCtx.rotate(deg2rad(logo.rotation));
+        targetCtx.globalAlpha = logo.opacity;
+
+        const src = logo.processed || logo.img;
+        const w = logo.baseW * logo.scale, h = logo.baseH * logo.scale;
+
+        if (logo.strokeOn && logo.strokeWidth > 0) {
+          const color = logo.strokeAuto ? autoStrokeColor(logo) : (logo.strokeColor || STROKE_LIGHT);
+          const out = makeOutline(src, logo.strokeWidth, color);
+          const outW = out.canvas.width * logo.scale;
+          const outH = out.canvas.height * logo.scale;
+          targetCtx.drawImage(out.canvas, -outW / 2, -outH / 2, outW, outH);
+        } else {
+          targetCtx.drawImage(src, -w / 2, -h / 2, w, h);
+        }
+        targetCtx.restore();
+      }
+    }
+
+    function render() {
+      paintCard(ctx, true);
+
+      // 绘制选中/悬停框
+      if (state.selected) {
+        const logo = cur();
+        if (logo) {
+          const w = logo.baseW * logo.scale, h = logo.baseH * logo.scale;
+          ctx.save();
+          ctx.translate(logo.x, logo.y);
+          if (logo.rotation) ctx.rotate(deg2rad(logo.rotation));
+          ctx.lineWidth = 3;
+          ctx.strokeStyle = "rgba(255,255,255,0.8)";
+          ctx.strokeRect(-w / 2, -h / 2, w, h);
+          ctx.lineWidth = 1.5;
+          ctx.strokeStyle = "#4f46e5";
+          ctx.strokeRect(-w / 2, -h / 2, w, h);
+          ctx.restore();
+        }
+      }
+    }
+
+    /* ================= 画布鼠标/触控交互 ================= */
+    function getCanvasPos(e) {
+      const r = canvas.getBoundingClientRect();
+      return {
+        x: (e.clientX - r.left) * (EXPORT_W / r.width),
+        y: (e.clientY - r.top) * (EXPORT_H / r.height)
+      };
+    }
+
+    function hitLogo(p) {
+      for (let i = state.logos.length - 1; i >= 0; i--) {
+        const l = state.logos[i];
+        const w = l.baseW * l.scale, h = l.baseH * l.scale;
+        const dx = p.x - l.x, dy = p.y - l.y;
+        const c = Math.cos(-deg2rad(l.rotation)), s = Math.sin(-deg2rad(l.rotation));
+        const lx = dx * c - dy * s, ly = dx * s + dy * c;
+        if (Math.abs(lx) <= w / 2 && Math.abs(ly) <= h / 2) return l;
+      }
+      return null;
+    }
+
+    canvas.addEventListener("pointerdown", e => {
+      const p = getCanvasPos(e);
+      const hit = hitLogo(p);
+      if (hit) {
+        select(hit.id);
+        state.dragging = true; state.dragId = hit.id;
+        state.dragOffX = p.x - hit.x; state.dragOffY = p.y - hit.y;
+        canvas.setPointerCapture(e.pointerId);
+      } else {
+        select(null);
+      }
+    });
+
+    canvas.addEventListener("pointermove", e => {
+      const p = getCanvasPos(e);
+      if (state.dragging && state.dragId) {
+        const l = state.logos.find(x => x.id === state.dragId);
+        if (l) {
+          l.x = clamp(p.x - state.dragOffX, 0, EXPORT_W);
+          l.y = clamp(p.y - state.dragOffY, 0, EXPORT_H);
+          render();
+        }
+        return;
+      }
+      const h = hitLogo(p);
+      canvas.style.cursor = h ? "move" : "default";
+    });
+
+    canvas.addEventListener("pointerup", () => {
+      state.dragging = false; state.dragId = null;
+    });
+
+    canvas.addEventListener("wheel", e => {
+      if (state.selected == null) return;
+      const l = cur(); if (!l) return;
+      e.preventDefault();
+      l.scale = clamp(l.scale * (e.deltaY < 0 ? 1.08 : 0.92), 0.05, 5);
+      syncEditor(); render();
+    }, { passive: false });
+
+    // 键盘方向键像素级微调
+    window.addEventListener("keydown", e => {
+      const activeTag = (document.activeElement.tagName || "").toLowerCase();
+      if (activeTag === "input" || activeTag === "textarea") return;
+      const l = cur();
+      if (!l) return;
+      let step = e.shiftKey ? 10 : 1;
+      if (e.key === "ArrowLeft") { l.x = clamp(l.x - step, 0, EXPORT_W); render(); e.preventDefault(); }
+      if (e.key === "ArrowRight") { l.x = clamp(l.x + step, 0, EXPORT_W); render(); e.preventDefault(); }
+      if (e.key === "ArrowUp") { l.y = clamp(l.y - step, 0, EXPORT_H); render(); e.preventDefault(); }
+      if (e.key === "ArrowDown") { l.y = clamp(l.y + step, 0, EXPORT_H); render(); e.preventDefault(); }
+      if (e.key === "Delete" || e.key === "Backspace") { deleteSelected(); }
+    });
+
+    /* ================= 裁剪系统 ================= */
+    const cropCanvas = $("cropCanvas"), cctx = cropCanvas.getContext("2d");
+    const crop = {
+      img: null, scale: 1, dispW: 0, dispH: 0,
+      boxX: 0, boxY: 0, boxW: 0, boxH: 0,
+      dragging: false, mode: null, startX: 0, startY: 0, orig: null
+    };
+
+    function openCrop(target) {
+      const isRef = target === "ref";
+      const img = isRef ? state.refSource : state.bgSource;
+      if (!img) { toast(isRef ? "请先上传参考图" : "请先上传卡面背景图片"); return; }
+      state.cropTarget = target;
+      $("cropTitle").textContent = isRef ? "裁剪对位参考图" : "裁剪卡面背景图片";
+
+      const maxW = Math.min(640, window.innerWidth * 0.7);
+      crop.scale = maxW / (img.naturalWidth || img.width);
+      crop.img = img;
+      crop.dispW = (img.naturalWidth || img.width) * crop.scale;
+      crop.dispH = (img.naturalHeight || img.height) * crop.scale;
+      cropCanvas.width = crop.dispW; cropCanvas.height = crop.dispH;
+
+      let bw, bh;
+      if (crop.dispW / crop.dispH > RATIO) {
+        bh = crop.dispH; bw = bh * RATIO;
+      } else {
+        bw = crop.dispW; bh = bw / RATIO;
+      }
+      crop.boxW = bw; crop.boxH = bh;
+      crop.boxX = (crop.dispW - bw) / 2; crop.boxY = (crop.dispH - bh) / 2;
+      $("cropModal").classList.remove("hidden");
+      drawCrop();
+    }
+
+    function closeCrop() {
+      $("cropModal").classList.add("hidden");
+    }
+
+    function drawCrop() {
+      const c = crop;
+      cctx.clearRect(0, 0, cropCanvas.width, cropCanvas.height);
+      cctx.drawImage(c.img, 0, 0, c.dispW, c.dispH);
+      // 半透明遮罩
+      cctx.fillStyle = "rgba(15, 23, 42, 0.6)";
+      cctx.fillRect(0, 0, cropCanvas.width, c.boxY);
+      cctx.fillRect(0, c.boxY + c.boxH, cropCanvas.width, cropCanvas.height - c.boxY - c.boxH);
+      cctx.fillRect(0, c.boxY, c.boxX, c.boxH);
+      cctx.fillRect(c.boxX + c.boxW, c.boxY, cropCanvas.width - c.boxX - c.boxW, c.boxH);
+      // 白色高亮选框与三分线
+      cctx.strokeStyle = "#ffffff"; cctx.lineWidth = 2;
+      cctx.strokeRect(c.boxX, c.boxY, c.boxW, c.boxH);
+      cctx.strokeStyle = "rgba(255,255,255,0.4)"; cctx.lineWidth = 1;
+      for (let i = 1; i < 3; i++) {
+        const lx = c.boxX + c.boxW * i / 3;
+        cctx.beginPath(); cctx.moveTo(lx, c.boxY); cctx.lineTo(lx, c.boxY + c.boxH); cctx.stroke();
+        const ly = c.boxY + c.boxH * i / 3;
+        cctx.beginPath(); cctx.moveTo(c.boxX, ly); cctx.lineTo(c.boxX + c.boxW, ly); cctx.stroke();
+      }
+      // 四角蓝色控制手柄
+      cctx.fillStyle = "#4f46e5";
+      for (const [cx, cy] of [[c.boxX, c.boxY], [c.boxX + c.boxW, c.boxY], [c.boxX, c.boxY + c.boxH], [c.boxX + c.boxW, c.boxY + c.boxH]]) {
+        cctx.fillRect(cx - 4, cy - 4, 8, 8);
+      }
+      $("cropReadout").textContent = `选区 ${Math.round(crop.boxW / crop.scale)} × ${Math.round(crop.boxH / crop.scale)} px · 输出 1536 × 969`;
+    }
+
+    cropCanvas.addEventListener("pointerdown", e => {
+      const r = cropCanvas.getBoundingClientRect();
+      const sx = cropCanvas.width / r.width, sy = cropCanvas.height / r.height;
+      const p = { x: (e.clientX - r.left) * sx, y: (e.clientY - r.top) * sy };
+      const hs = 12;
+      if (Math.abs(p.x - crop.boxX) <= hs && Math.abs(p.y - crop.boxY) <= hs) crop.mode = "tl";
+      else if (Math.abs(p.x - (crop.boxX + crop.boxW)) <= hs && Math.abs(p.y - crop.boxY) <= hs) crop.mode = "tr";
+      else if (Math.abs(p.x - crop.boxX) <= hs && Math.abs(p.y - (crop.boxY + crop.boxH)) <= hs) crop.mode = "bl";
+      else if (Math.abs(p.x - (crop.boxX + crop.boxW)) <= hs && Math.abs(p.y - (crop.boxY + crop.boxH)) <= hs) crop.mode = "br";
+      else if (p.x >= crop.boxX && p.x <= crop.boxX + crop.boxW && p.y >= crop.boxY && p.y <= crop.boxY + crop.boxH) crop.mode = "move";
+      else return;
+
+      crop.dragging = true; crop.startX = p.x; crop.startY = p.y;
+      crop.orig = { x: crop.boxX, y: crop.boxY, w: crop.boxW, h: crop.boxH };
+      cropCanvas.setPointerCapture(e.pointerId);
+    });
+
+    cropCanvas.addEventListener("pointermove", e => {
+      if (!crop.dragging) return;
+      const r = cropCanvas.getBoundingClientRect();
+      const sx = cropCanvas.width / r.width, sy = cropCanvas.height / r.height;
+      const p = { x: (e.clientX - r.left) * sx, y: (e.clientY - r.top) * sy };
+      const dx = p.x - crop.startX, dy = p.y - crop.startY;
+      const o = crop.orig;
+      let { x, y, w, h } = o;
+
+      if (crop.mode === "move") {
+        x = clamp(o.x + dx, 0, crop.dispW - o.w);
+        y = clamp(o.y + dy, 0, crop.dispH - o.h);
+      } else if (crop.mode === "tl") {
+        w = clamp(o.w - dx, 40, o.x + o.w); h = w / RATIO;
+        x = o.x + o.w - w; y = o.y + o.h - h;
+      } else if (crop.mode === "br") {
+        w = clamp(o.w + dx, 40, crop.dispW - o.x); h = w / RATIO;
+      }
+      x = clamp(x, 0, crop.dispW - w); y = clamp(y, 0, crop.dispH - h);
+      crop.boxX = x; crop.boxY = y; crop.boxW = w; crop.boxH = h;
+      drawCrop();
+    });
+
+    cropCanvas.addEventListener("pointerup", () => { crop.dragging = false; });
+
+    function applyCrop() {
+      const s = crop.scale;
+      const c = document.createElement("canvas");
+      c.width = EXPORT_W; c.height = EXPORT_H;
+      const cx = c.getContext("2d");
+      cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = "high";
+      cx.drawImage(crop.img, crop.boxX / s, crop.boxY / s, crop.boxW / s, crop.boxH / s, 0, 0, EXPORT_W, EXPORT_H);
+      if (state.cropTarget === "ref") state.refImage = c;
+      else state.bgImage = c;
+      closeCrop(); render();
+      toast("裁剪已应用");
+    }
+
+    /* ================= 导出超清 PNG ================= */
+    function exportPNG() {
+      if (!state.hasBg) { toast("请先上传背景图片或选择预设皮肤"); return; }
+      const o = document.createElement("canvas");
+      o.width = EXPORT_W; o.height = EXPORT_H;
+      const oc = o.getContext("2d");
+
+      if (state.rounded) {
+        const r = 3.18 * (EXPORT_W / 85.60); // 3.18mm 原生物理圆角
+        oc.beginPath();
+        oc.moveTo(r, 0); oc.lineTo(EXPORT_W - r, 0); oc.quadraticCurveTo(EXPORT_W, 0, EXPORT_W, r);
+        oc.lineTo(EXPORT_W, EXPORT_H - r); oc.quadraticCurveTo(EXPORT_W, EXPORT_H, EXPORT_W - r, EXPORT_H);
+        oc.lineTo(r, EXPORT_H); oc.quadraticCurveTo(0, EXPORT_H, 0, EXPORT_H - r);
+        oc.lineTo(0, r); oc.quadraticCurveTo(0, 0, r, 0); oc.closePath();
+        oc.clip();
+      }
+
+      paintCard(oc, false);
+
+      const a = document.createElement("a");
+      a.href = o.toDataURL("image/png");
+      a.download = "AirCard_Custom_Card.png";
+      a.click();
+      toast("已导出 1536×969 原生超清 PNG");
+    }
+
+    /* ================= 清空重置 ================= */
+    function clearAll() {
+      if (!confirm("确定清空画布并重置所有图层吗？")) return;
+      state.hasBg = false; state.bgImage = null; state.bgSource = null;
+      state.hasRef = false; state.refImage = null; state.refSource = null;
+      state.logos = []; state.selected = null;
+      $("emptyState").classList.remove("hidden");
+      syncEditor(); syncRefCtl(); renderLayers(); render();
+      toast("画布已重置");
+    }
+
+    /* ================= 事件绑定与初始化 ================= */
+    document.addEventListener("DOMContentLoaded", () => {
+      // 预设皮肤点击
+      document.querySelectorAll(".skin-btn").forEach(b => {
+        b.addEventListener("click", () => applySkinPreset(b.dataset.preset));
+      });
+      $("btnQuickPreset").onclick = () => applySkinPreset("obsidian");
+
+      // 文件上传绑定
+      $("dropZone").onclick = () => $("fileImg").click();
+      $("btnUploadEmpty").onclick = e => { e.stopPropagation(); $("fileImg").click(); };
+      $("fileImg").onchange = e => { if (e.target.files[0]) handleImageFile(e.target.files[0]); e.target.value = ""; };
+
+      $("refDrop").onclick = () => $("fileRef").click();
+      $("fileRef").onchange = e => { if (e.target.files[0]) handleRefFile(e.target.files[0]); e.target.value = ""; };
+
+      $("logoDrop").onclick = () => $("fileLogo").click();
+      $("fileLogo").onchange = e => { addLogoFiles(e.target.files); e.target.value = ""; };
+
+      // 居中与裁剪
+      $("btnFit").onclick = () => {
+        if (state.bgSource) { state.bgImage = fitImageToCard(state.bgSource); render(); toast("已重新居中匹配"); }
+        else toast("请先上传背景图片");
+      };
+      $("btnRefFit").onclick = () => {
+        if (state.refSource) { state.refImage = fitImageToCard(state.refSource); render(); toast("参考图已重新居中匹配"); }
+        else toast("请先上传参考图");
+      };
+      $("btnCropOpen").onclick = () => openCrop("bg");
+      $("btnCropOpen2").onclick = () => openCrop("bg");
+      $("btnRefCrop").onclick = () => openCrop("ref");
+      $("cropClose").onclick = closeCrop;
+      $("cropCancel").onclick = closeCrop;
+      $("cropApply").onclick = applyCrop;
+      $("cropModal").onclick = e => { if (e.target === $("cropModal")) closeCrop(); };
+
+      // 参考图控制
+      $("refShow").onchange = e => { state.refOn = e.target.checked; render(); };
+      $("refOpacityRange").oninput = e => {
+        state.refOpacity = e.target.value / 100;
+        $("refOpacityVal").textContent = e.target.value + "%";
+        render();
+      };
+
+      // 属性面板调整
+      $("sizeRange").oninput = e => { const l = cur(); if (!l) return; l.scale = e.target.value / 100; $("sizeVal").textContent = e.target.value + "%"; render(); };
+      $("opacityRange").oninput = e => { const l = cur(); if (!l) return; l.opacity = e.target.value / 100; $("opacityVal").textContent = e.target.value + "%"; render(); };
+      $("rotateRange").oninput = e => { const l = cur(); if (!l) return; l.rotation = +e.target.value; $("rotateVal").textContent = e.target.value + "°"; render(); };
+      $("bgRemove").onchange = e => {
+        const l = cur(); if (!l) return;
+        l.removeBg = e.target.checked;
+        $("toleranceField").classList.toggle("hidden", !l.removeBg);
+        processRemoveBg(l); renderLayers(); render();
+      };
+      $("toleranceRange").oninput = e => {
+        const l = cur(); if (!l) return;
+        l.tolerance = +e.target.value; $("tolVal").textContent = e.target.value;
+        if (l.removeBg) { processRemoveBg(l); renderLayers(); render(); }
+      };
+      $("strokeOn").onchange = e => {
+        const l = cur(); if (!l) return;
+        l.strokeOn = e.target.checked;
+        $("strokeFields").classList.toggle("hidden", !l.strokeOn);
+        render();
+      };
+      $("strokeRange").oninput = e => {
+        const l = cur(); if (!l) return;
+        l.strokeWidth = +e.target.value; $("strokeVal").textContent = e.target.value + " px";
+        render();
+      };
+      $("strokeAuto").onchange = e => {
+        const l = cur(); if (!l) return;
+        l.strokeAuto = e.target.checked; $("strokeColor").disabled = l.strokeAuto;
+        render();
+      };
+      $("strokeColor").oninput = e => {
+        const l = cur(); if (!l) return;
+        l.strokeColor = e.target.value; $("strokeColorVal").textContent = e.target.value.toUpperCase();
+        render();
+      };
+
+      // 图层操作
+      $("btnDelete").onclick = deleteSelected;
+      $("btnLayerUp").onclick = () => moveLayer(1);
+      $("btnLayerDown").onclick = () => moveLayer(-1);
+
+      // 圆角切换
+      $("roundedChk").onchange = e => {
+        state.rounded = e.target.checked;
+        canvas.classList.toggle("sharp", !state.rounded);
+      };
+
+      // 导出与重置
+      $("btnExport").onclick = exportPNG;
+      $("btnClear").onclick = clearAll;
+
+      // 法律声明弹窗
+      const openLegal = () => $("legalModal").classList.remove("hidden");
+      const closeLegal = () => $("legalModal").classList.add("hidden");
+      $("btnLegal").onclick = openLegal;
+      $("btnLegalFooter").onclick = openLegal;
+      $("legalClose").onclick = closeLegal;
+      $("legalConfirm").onclick = closeLegal;
+      $("legalModal").onclick = e => { if (e.target === $("legalModal")) closeLegal(); };
+
+      // 拖拽文件进入页面
+      window.addEventListener("dragover", e => e.preventDefault());
+      window.addEventListener("drop", e => {
+        e.preventDefault();
+        const f = e.dataTransfer.files[0];
+        if (!f || !/^image\//.test(f.type)) return;
+        if (!state.hasBg) handleImageFile(f);
+        else addLogoFiles([f]);
+      });
+
+      // 初始化渲染
+      render();
+    });
+  </script>
+</body>
+
+</html>

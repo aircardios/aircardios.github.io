@@ -14,6 +14,9 @@
   <a href="https://aircardios.github.io/cards/index.html">
     <img src="https://img.shields.io/badge/模版-Apple%20Pay%20卡面库-10b981?style=for-the-badge&logo=applepay&logoColor=white" alt="Cards" />
   </a>
+  <a href="https://aircardios.github.io/cards/custom.html">
+    <img src="https://img.shields.io/badge/工坊-制作个性卡面-ec4899?style=for-the-badge&logo=artstation&logoColor=white" alt="Custom Card Studio" />
+  </a>
   <a href="https://aircardios.github.io/pass-themes/index.html">
     <img src="https://img.shields.io/badge/按键-锁屏密码主题库-f59e0b?style=for-the-badge&logo=apple&logoColor=white" alt="Pass Themes" />
   </a>
@@ -33,6 +36,7 @@
 <p align="center">
   <a href="https://aircardios.github.io/">🌐 官网首页</a> ·
   <a href="https://aircardios.github.io/cards/index.html">🎨 卡面模版库</a> ·
+  <a href="https://aircardios.github.io/cards/custom.html">✨ 制作个性卡面</a> ·
   <a href="https://aircardios.github.io/pass-themes/index.html">🔢 锁屏按键库</a> ·
   <a href="https://aircardios.github.io/tutorial.html">📖 官方图文教程</a> ·
   <a href="https://aircardios.github.io/download.html">📥 下载中心 (IPA/Mac/Win)</a> ·
@@ -64,19 +68,26 @@
 - **视网膜超清品质**：官方内置 **416+ 套** 精美模版（中国工商银行、招商银行、中国银行、交通银行、汇丰、渣打、Wise、Revolut、Suica 等主流大行与出海极客卡），经过苹果超视网膜 XDR 屏幕色彩矩阵深度校准。
 - **高速直链下载**：卡面素材全量接入国内**夸克网盘批量高速直链**，免提取码秒级获取，彻底移除冗余外链弹窗。
 
-### 2. 🔢 锁屏数字密码按键主题中心 (.passthm) [最新上线]
+### 2. ✨ 灵感工坊 · 制作个性卡面 (Custom Studio) [最新上线]
+- **专属在线制作工坊**：上线独立工坊页面 [`/cards/custom.html`](https://aircardios.github.io/cards/custom.html)，随时随地打造个人专属卡面。
+- **真实 3D 视差交互**：参考原生官网 3D 物理引擎，支持鼠标/触控倾斜视差与动态高光漫反射（Specular Glare）。
+- **多种高级质感预设**：内置钛金曜石、极光渐变、日落熔金、香槟贵金属等 6 款精致预设皮肤，同时支持任意本地图片上传自适应居中排版。
+- **卡面细节自由配置**：支持芯片金银切换/隐藏、银联/Visa/Mastercard/Amex/JCB 徽标切换、闪付无线波标、卡号与持卡人双向实时绑定。
+- **点对点超清导出**：纯前端 1536×969 Canvas 原生像素级精准绘制，不依赖后端无缝导出高画质 PNG，100% 保护隐私。
+
+### 3. 🔢 锁屏数字密码按键主题中心 (.passthm) [最新上线]
 - **专属按键主题库**：上线独立频道 [`/pass-themes`](https://aircardios.github.io/pass-themes/index.html)，官方精选 **27 款** 热门主题。
 - **涵盖多重风格**：包括太空狼人杀 (Among Us)、我的世界 (Minecraft)、七龙珠·神龙召唤、宝可梦精灵球、极客 Linux 发行版、音游 OSU!、夏日清凉甜筒等。
 - **地道中文与规格参数**：全套主题深度中文汉化，配有详细特色亮点、推荐搭配壁纸以及专属问答 FAQ。
 - **光鸭网盘极速下载**：按键详情页已全部接入**光鸭网盘分享直链**，一键秒级下载 `.passthm` 主题包。
 - **首页精选展区**：官网首页精选 6 大代表性按键主题，配备动态悬浮画廊与全套主题库快速入口。
 
-### 3. 🖼️ PosterBoard 锁屏壁纸定制 (.tendies\.tendiex)
+### 4. 🖼️ PosterBoard 锁屏壁纸定制 (.tendies\.tendiex)
 - 直接从系统“文件”App 导入并解压 `.tendies\.tendiex` 锁屏壁纸档案包。
 - 自动识别 PosterBoard 壁纸容器及当前激活的描述符 UUID，将壁纸资源完整注入存储系统。
 - **集成 NeoSpring 自动注销**：基于 WebKit GPU 进程崩溃注销技术，刷写完成后自动注销（Respring）刷新主屏，**彻底告别手动重启 iPhone**！
 
-### 4. 📱 端侧免电脑本机配对 (On-device Pairing)
+### 5. 📱 端侧免电脑本机配对 (On-device Pairing)
 - 内置 Bonjour 本地服务广播，支持手机通过“设置 ➔ 隐私与安全性 ➔ 开发者模式 ➔ 与 AirCard-iOS 配对”实现本机自回环配对。
 - 自动读取并将配对记录同步至 `aircard_pairing.plist`。
 - 配对完成后，完全脱离电脑与外部数据线，随时随地在手机上修改卡面、主题与壁纸。
@@ -91,6 +102,7 @@
 | **iPhone 原生端 (AirCard IPA)** | **v1.3** (最新稳定版) | iOS 18+ (巨魔 / SideStore / 爱思) | [光鸭直链](https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/b9034a60bff4) · [迅雷网盘](https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#) |
 | **Windows 原生版** | **v1.2.2** (绿色单文件) | Windows 10 / 11 (64位原生 Rust) | [光鸭直链](https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/fb902664428a) · [迅雷网盘](https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#) |
 | **macOS 通用版** | **v1.2.3** (DMG 双架构) | macOS 12.0+ (M系列 / Intel) | [光鸭直链](https://www.guangyapan.com/s/1949102385200332863_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/2468279abd40) · [迅雷网盘](https://pan.xunlei.com/s/VP22p5T3dmHyci7LcWsqedA5A1?pwd=v8b5#) |
+| **个性卡面制作工坊** | 在线实时 3D 渲染与导出 | 纯前端本地 1536×969 超清导出 | [进入个性卡面制作工坊 ➔](https://aircardios.github.io/cards/custom.html) (支持自定义上传、预设皮肤与芯片卡号排版) |
 | **Apple Pay 卡面素材库** | **416+ 套** 视网膜高清卡面 | 钱包卡面 / PNG 格式 | [进入卡面模版库挑选下载 ➔](https://aircardios.github.io/cards/index.html) (支持夸克网盘单卡免提取码极速直链) |
 | **锁屏按键主题中心** | **27+ 款** 热门主题包 | iOS 18 锁屏密码按键 / `.passthm` | [进入锁屏按键主题库 ➔](https://aircardios.github.io/pass-themes/index.html) (支持光鸭网盘专属极速直链) |
 | **美化扩展全套大礼包** | 50+ 套主题与高清卡面全集 | 打包 ZIP 归档 | [夸克网盘合集免费下载](https://pan.quark.cn/s/c8454bb2e4f1) |

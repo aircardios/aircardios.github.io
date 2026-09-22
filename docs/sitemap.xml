@@ -25,6 +25,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://aircardios.github.io/cards/custom.html</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://aircardios.github.io/pass-themes/index.html</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>weekly</changefreq>
