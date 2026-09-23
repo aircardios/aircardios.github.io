@@ -111,10 +111,10 @@
 ## 💬 官方玩家交流社区 (QQ群)
 
 - **群名称**：AirCard & 交互壁纸交流群
-- **QQ 群号**：`1006363010`
+- **QQ 群号**：`1126901301`
 - **加入方式**：
-  - 网页一键直达：[点击直接加入群聊 (通道 1)](https://qm.qq.com/q/5u0IuzGdnW)（支持手机直接唤起手机 QQ）
-  - 扫码备用通道：[扫码专享通道 (通道 2)](https://qm.qq.com/q/RthOcegrim) 或直接访问 [官方社区页面](https://aircardios.github.io/community.html) 扫码加入
+  - 网页一键直达：[点击直接加入群聊 (通道 1)](https://qm.qq.com/q/JVAlVfT2ka)（支持手机直接唤起手机 QQ）
+  - 扫码备用通道：[扫码专享通道 (通道 2)](https://qm.qq.com/q/qAL5xZTsys) 或直接访问 [官方社区页面](https://aircardios.github.io/community.html) 扫码加入
 
 > 🔗 更多版本详情、MD5 校验与历史版本请访问：**[AirCard Download & IPA 下载中心](https://aircardios.github.io/download.html)**
 

@@ -148,11 +148,11 @@ const AIR_CONFIG = {
 
   // 官方玩家社区与交流群配置
   community: {
-    qqGroup: "1006363010",
+    qqGroup: "1126901301",
     groupName: "AirCard & 交互壁纸交流群",
     description: "免越狱玩机、Apple Pay 钱包卡面美化、锁屏按键与壁纸技术交流群",
-    joinUrl: "https://qm.qq.com/q/5u0IuzGdnW", // 网页点击一键加群通道
-    qrUrl: "https://qm.qq.com/q/RthOcegrim"    // 手机扫码专用加群通道
+    joinUrl: "https://qm.qq.com/q/JVAlVfT2ka", // 网页点击一键加群通道
+    qrUrl: "https://qm.qq.com/q/qAL5xZTsys"    // 手机扫码专用加群通道
   }
 };
 
