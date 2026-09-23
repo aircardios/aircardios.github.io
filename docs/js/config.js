@@ -103,7 +103,7 @@ const AIR_CONFIG = {
       id: "macos",
       title: "AirCard for macOS",
       tag: "macOS 通用版 (Universal)",
-      version: "v1.2.3",
+      version: "v1.2.4",
       releaseDate: "2026-09",
       fileName: "AirCard.dmg",
       size: "~42.8 MB",
@@ -114,14 +114,14 @@ const AIR_CONFIG = {
       drives: {
         xunlei: {
           name: "迅雷网盘",
-          url: "https://pan.xunlei.com/s/VP22p5T3dmHyci7LcWsqedA5A1?pwd=v8b5#",
-          code: "v8b5",
+          url: "https://pan.xunlei.com/s/VP2AWwvyRfEqNL5_2IyKypbUA1?pwd=sq4z#",
+          code: "sq4z",
           badge: "高速分流",
           icon: "⚡"
         },
         guangya: {
           name: "光鸭网盘",
-          url: "https://www.guangyapan.com/s/1949102385200332863_aeWXEya0Twth-MDh",
+          url: "https://www.guangyapan.com/s/1949644399859953695_aeWXEya0Twth-MDh",
           code: "",
           codeText: "免提取码",
           badge: "免登录直链",
@@ -129,7 +129,7 @@ const AIR_CONFIG = {
         },
         quark: {
           name: "夸克网盘",
-          url: "https://pan.quark.cn/s/2468279abd40",
+          url: "https://pan.quark.cn/s/b04d70d40ef6",
           code: "",
           codeText: "无提取码",
           badge: "推荐分流",

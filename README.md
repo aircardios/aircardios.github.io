@@ -101,7 +101,7 @@
 | :--- | :--- | :--- | :--- |
 | **iPhone 原生端 (AirCard IPA)** | **v1.3** (最新稳定版) | iOS 18+ (巨魔 / SideStore / 爱思) | [光鸭直链](https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/b9034a60bff4) · [迅雷网盘](https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#) |
 | **Windows 原生版** | **v1.2.2** (绿色单文件) | Windows 10 / 11 (64位原生 Rust) | [光鸭直链](https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/fb902664428a) · [迅雷网盘](https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#) |
-| **macOS 通用版** | **v1.2.3** (DMG 双架构) | macOS 12.0+ (M系列 / Intel) | [光鸭直链](https://www.guangyapan.com/s/1949102385200332863_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/2468279abd40) · [迅雷网盘](https://pan.xunlei.com/s/VP22p5T3dmHyci7LcWsqedA5A1?pwd=v8b5#) |
+| **macOS 通用版** | **v1.2.4** (DMG 双架构) | macOS 12.0+ (M系列 / Intel) | [光鸭直链](https://www.guangyapan.com/s/1949644399859953695_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/b04d70d40ef6) · [迅雷网盘](https://pan.xunlei.com/s/VP2AWwvyRfEqNL5_2IyKypbUA1?pwd=sq4z#) |
 | **个性卡面制作工坊** | 在线实时 3D 渲染与导出 | 纯前端本地 1536×969 超清导出 | [进入个性卡面制作工坊 ➔](https://aircardios.github.io/cards/custom.html) (支持自定义上传、预设皮肤与芯片卡号排版) |
 | **Apple Pay 卡面素材库** | **416+ 套** 视网膜高清卡面 | 钱包卡面 / PNG 格式 | [进入卡面模版库挑选下载 ➔](https://aircardios.github.io/cards/index.html) (支持夸克网盘单卡免提取码极速直链) |
 | **锁屏按键主题中心** | **27+ 款** 热门主题包 | iOS 18 锁屏密码按键 / `.passthm` | [进入锁屏按键主题库 ➔](https://aircardios.github.io/pass-themes/index.html) (支持光鸭网盘专属极速直链) |
@@ -130,7 +130,7 @@
   1. 开启 **LocalDevVPN**（回环路由 `127.0.0.1` 或 `10.7.0.1`）；
   2. 前往 iPhone“设置 ➔ 隐私与安全性 ➔ 开发者模式 ➔ 与 AirCard-iOS 配对”（手机通过 Bonjour 自广播实现免电脑配对）。
 
-### 2. AirCard for macOS (Universal DMG · 最新版 v1.2.3)
+### 2. AirCard for macOS (Universal DMG · 最新版 v1.2.4)
 - **文件格式**：`AirCard.dmg` (~42.8 MB)
 - **支持系统**：macOS 12.0 或更高
 - **硬件兼容**：Apple Silicon (M1/M2/M3/M4) 与 Intel (x86_64) 双架构

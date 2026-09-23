@@ -19,7 +19,7 @@
    - 前置要求：开启 LocalDevVPN 本地回环网络 (`127.0.0.1` 或 `10.7.0.1`)；前往“设置 ➔ 隐私与安全性 ➔ 开发者模式 ➔ 与 AirCard-iOS 配对”。
    - 推荐侧载工具：TrollStore (巨魔)、SideStore、AltStore、LiveContainer、爱思助手。
 
-2. **AirCard for macOS (Mac 电脑通用版 · 最新版 v1.2.2)**：
+2. **AirCard for macOS (Mac 电脑通用版 · 最新版 v1.2.4)**：
    - 格式：`AirCard.dmg` (~42.8 MB)
    - 架构支持：Universal 2 双架构（原生支持 Apple Silicon M1/M2/M3/M4 与 Intel x86_64）。
    - 环境要求：无需配置 Homebrew、Python 或终端，开箱即用。
@@ -58,10 +58,10 @@
 - 光鸭网盘：https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh (免提取码直链)
 - 夸克网盘：https://pan.quark.cn/s/fb902664428a
 
-### 3. AirCard for Mac 最新版 v1.2.3
-- 迅雷网盘：https://pan.xunlei.com/s/VP22p5T3dmHyci7LcWsqedA5A1?pwd=v8b5# (提取码: v8b5)
-- 光鸭网盘：https://www.guangyapan.com/s/1949102385200332863_aeWXEya0Twth-MDh (免提取码直链)
-- 夸克网盘：https://pan.quark.cn/s/2468279abd40
+### 3. AirCard for Mac 最新版 v1.2.4
+- 迅雷网盘：https://pan.xunlei.com/s/VP2AWwvyRfEqNL5_2IyKypbUA1?pwd=sq4z# (提取码: sq4z)
+- 光鸭网盘：https://www.guangyapan.com/s/1949644399859953695_aeWXEya0Twth-MDh (免提取码直链)
+- 夸克网盘：https://pan.quark.cn/s/b04d70d40ef6
 
 ### 4. 官方站点与仓库
 - 官方主页：https://aircardios.github.io/
