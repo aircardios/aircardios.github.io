@@ -228,12 +228,13 @@
 
       <!-- 分类 Tab 按钮组 -->
       <div class="flex items-center justify-center flex-wrap gap-2 pt-1" id="filterTabs">
-        <button data-filter="all" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-600 text-white shadow-md shadow-brand-500/20">全部 (416)</button>
+        <button data-filter="all" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-600 text-white shadow-md shadow-brand-500/20">全部 (438)</button>
         <button data-filter="cn" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">🇨🇳 中国大陆 (248)</button>
         <button data-filter="hk-mo" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">🇭🇰 港澳地区 (35)</button>
         <button data-filter="tw" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">🇹🇼 中国台湾 (43)</button>
         <button data-filter="jp" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">🇯🇵 日本地区 (6)</button>
         <button data-filter="global" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">🌍 国际与欧美 (84)</button>
+        <button data-filter="custom" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:border-brand-500">✨ 自定义卡面 (22)</button>
         <a href="custom.html" class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-brand-50 dark:bg-brand-950/60 text-brand-600 dark:text-brand-400 border border-brand-500/30 hover:bg-brand-500 hover:text-white flex items-center gap-1.5 shadow-sm">
           <span>🎨</span> 制作个性卡面 ➔
         </a>
@@ -241,13 +242,366 @@
 
       <!-- 结果统计与清空提示 -->
       <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 px-1">
-        <span id="resultStats">显示全部 416 套卡面</span>
+        <span id="resultStats">显示全部 438 套卡面</span>
         <span id="noResultNotice" class="hidden text-amber-600 dark:text-amber-400 font-semibold">没有找到符合搜索条件的卡面</span>
       </div>
     </div>
 
     <!-- 卡面栅格 -->
     <div id="cardsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 0285538FE675167DC3A0881783C552C1.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/0285538FE675167DC3A0881783C552C1.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 2CABAA6F3B00091000844ECCC33415A9.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/2CABAA6F3B00091000844ECCC33415A9.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 326D0C8F50CA071C69BF6CADE516A2E5.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/326D0C8F50CA071C69BF6CADE516A2E5.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 33B03357B5A76AEFBF74C32FE54ABBBA.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/33B03357B5A76AEFBF74C32FE54ABBBA.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 3525BBDE1D8C192CE315C510205FFC43.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/3525BBDE1D8C192CE315C510205FFC43.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 4374835771467DB33BFA8E7BDA275D21.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/4374835771467DB33BFA8E7BDA275D21.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 44E4F6BDAC53E4F7A3FBB9F7FE0EF53C.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/44E4F6BDAC53E4F7A3FBB9F7FE0EF53C.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 488D2C2364800762AD365D0D03F96546.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/488D2C2364800762AD365D0D03F96546.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 4F3B5DC1D4297309C7268C6E96160694.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/4F3B5DC1D4297309C7268C6E96160694.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 5B7925A044DB11F89FE973B70964B8FF.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/5B7925A044DB11F89FE973B70964B8FF.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 64F8C84FC69812D30F7C30B5D5ADA28E.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/64F8C84FC69812D30F7C30B5D5ADA28E.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 905A6EC9C42523CB0D5F593A8887FE98.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/905A6EC9C42523CB0D5F593A8887FE98.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 A19240DEADCB19F2AFD5319C6AD51FAD.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/A19240DEADCB19F2AFD5319C6AD51FAD.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 ACC88FA2FD692A03D7B0F28223312D98.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/ACC88FA2FD692A03D7B0F28223312D98.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 ADE83DC53D89D82384222B08CE22F1FE.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/ADE83DC53D89D82384222B08CE22F1FE.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 BCDD4956E4D604B8EAE73060AC3E9A0E.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/BCDD4956E4D604B8EAE73060AC3E9A0E.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 CF62BA2184533614A39D7B67DF1C84F6.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/CF62BA2184533614A39D7B67DF1C84F6.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 DF06DCC8D0F9B7D567EC8485213C2F52.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/DF06DCC8D0F9B7D567EC8485213C2F52.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 E26F07D315085FD89BAACCC305A88D11.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/E26F07D315085FD89BAACCC305A88D11.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 E29A81E3D846CD4BC7B1A471DEDFF605.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/E29A81E3D846CD4BC7B1A471DEDFF605.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 E2D077E01B892C5E7B56D9DD66E3AC0A.jpg">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/E2D077E01B892C5E7B56D9DD66E3AC0A.jpg" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
+
+        <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all flex flex-col justify-between"
+             data-region="custom" data-search="自定义 自定义卡面 custom 夸克网盘 EB817F5B93CB2EEABFF1DA9DABB25C21.png">
+          <a href="https://pan.quark.cn/s/651566b9bd24" target="_blank" rel="noopener" class="block w-full">
+            <div class="w-full aspect-[1536/969] rounded-xl mb-4 relative overflow-hidden shadow-md group-hover:scale-[1.02] transition-transform duration-300 bg-slate-800 flex items-center justify-center">
+              <img src="https://raw.githubusercontent.com/aircardios/apple-pay-card/main/docs/assets/Apple%20Card%20Image%20Custom/EB817F5B93CB2EEABFF1DA9DABB25C21.png" alt="自定义卡面" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+
+            <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">
+              <div class="flex items-center gap-1.5 truncate pr-2">
+                <!-- 留空名称 -->
+              </div>
+              <span class="text-brand-600 dark:text-brand-400 font-semibold group-hover:translate-x-1 transition-transform shrink-0 flex items-center gap-1"><span>⚡</span> 网盘分享 ➔</span>
+            </div>
+          </a>
+        </div>
 
         <div class="card-item group block p-4 sm:p-5 rounded-2xl bg-white dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800/80 shadow-sm hover:shadow-md hover:border-brand-500/50 transition-all"
              data-region="global" data-search="commonwealth bank of australia debit mastercard commonwealth bank of australia commonwealth bank of australia commonwealth bank of australia mastercard 银行借记卡 (mastercard)">
@@ -9852,7 +10206,7 @@
             }
           });
 
-          resultStats.textContent = `显示 ${visibleCount} / 416 套卡面`;
+          resultStats.textContent = `显示 ${visibleCount} / 438 套卡面`;
           noResultNotice.classList.toggle('hidden', visibleCount > 0);
         }
 
