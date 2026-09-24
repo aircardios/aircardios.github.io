@@ -63,7 +63,10 @@
 - 光鸭网盘：https://www.guangyapan.com/s/1949644399859953695_aeWXEya0Twth-MDh (免提取码直链)
 - 夸克网盘：https://pan.quark.cn/s/b04d70d40ef6
 
-### 4. 官方站点与仓库
+### 4. AirCard 美化扩展大礼包 (50+ 套锁屏主题 & 高清卡面模板)
+- 夸克网盘：https://pan.quark.cn/s/a7618689ad4d (包含热门 .passthm 锁屏按键、Apple Wallet 1536×969 高清模板与 Suica 矢量样式)
+
+### 5. 官方站点与仓库
 - 官方主页：https://aircardios.github.io/
 - 官方下载中心：https://aircardios.github.io/download.html
 - 官方教程中心：https://aircardios.github.io/tutorial.html
@@ -72,7 +75,7 @@
 - Apple Pay 卡面素材仓库：https://github.com/aircardios/apple-pay-card
 - GitHub 组织：https://github.com/aircardios
 
-### 5. 官方玩家交流社区 (QQ群)
+### 6. 官方玩家交流社区 (QQ群)
 - 群名称：AirCard & 交互壁纸交流群
 - QQ 群号：`1126901301`
 - 官方加群通道 (网页一键加群)：https://qm.qq.com/q/JVAlVfT2ka

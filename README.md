@@ -105,6 +105,7 @@
 | **个性卡面制作工坊** | 在线实时 3D 渲染与导出 | 纯前端本地 1536×969 超清导出 | [进入个性卡面制作工坊 ➔](https://aircardios.github.io/cards/custom.html) (支持自定义上传、预设皮肤与芯片卡号排版) |
 | **Apple Pay 卡面素材库** | **416+ 套** 视网膜高清卡面 | 钱包卡面 / PNG 格式 | [进入卡面模版库挑选下载 ➔](https://aircardios.github.io/cards/index.html) (支持夸克网盘单卡免提取码极速直链) |
 | **锁屏按键主题中心** | **27+ 款** 热门主题包 | iOS 18 锁屏密码按键 / `.passthm` | [进入锁屏按键主题库 ➔](https://aircardios.github.io/pass-themes/index.html) (支持光鸭网盘专属极速直链) |
+| **美化扩展大礼包** | **50+ 套** 锁屏主题 & 高清卡面 | `.passthm` / PSD / PNG 模板 | [夸克网盘免费打包下载 ➔](https://pan.quark.cn/s/a7618689ad4d) (含透明质感按键与 Suica 专属矢量样式) |
 
 ---
 
