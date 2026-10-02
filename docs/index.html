@@ -207,11 +207,12 @@
         </div>
       </a>
 
-      <!-- 导航链接 (桌面端: lg 以上完整展示 7 项) -->
-      <nav class="hidden lg:flex items-center gap-4 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
+      <!-- 导航链接 (桌面端: lg 以上完整展示 8 项) -->
+      <nav class="hidden lg:flex items-center gap-3.5 xl:gap-6 text-xs xl:text-sm font-medium text-slate-600 dark:text-slate-300">
         <a href="index.html" class="text-brand-600 dark:text-brand-400 font-bold transition-colors">官网首页</a>
         <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
         <a href="pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
+        <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1">交互壁纸</a>
         <a href="tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
         <a href="download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
         <a href="community.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官方社区</a>
@@ -244,7 +245,7 @@
       </div>
     </div>
 
-    <!-- 移动端/平板抽屉菜单 (lg 以下折叠展示 7 项) -->
+    <!-- 移动端/平板抽屉菜单 (lg 以下折叠展示 8 项) -->
     <div id="mobileMenu"
       class="hidden lg:hidden px-4 pt-2 pb-4 space-y-2 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-[#090d16]/95 backdrop-blur-lg">
       <a href="index.html"
@@ -253,6 +254,11 @@
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">卡面模版库</a>
       <a href="pass-themes/index.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">锁屏按键库</a>
+      <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer"
+        class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 flex items-center justify-between">
+        <span>交互壁纸</span>
+        <span class="text-xs px-2 py-0.5 rounded-full bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 border border-brand-200 dark:border-brand-800">直达 ↗</span>
+      </a>
       <a href="tutorial.html"
         class="block px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">使用教程</a>
       <a href="download.html"
@@ -312,6 +318,10 @@
             <a href="download.html"
               class="px-6 py-3.5 rounded-full text-base font-semibold bg-brand-600 hover:bg-brand-700 text-white shadow-lg shadow-brand-600/30 hover:shadow-brand-600/40 hover:-translate-y-0.5 transition-all inline-flex items-center gap-2">
               <span>⚡ AirCard Download & IPA 下载中心</span>
+            </a>
+            <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer"
+              class="px-6 py-3.5 rounded-full text-base font-semibold bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/35 hover:-translate-y-0.5 transition-all inline-flex items-center gap-2">
+              <span>✨ 交互壁纸</span>
             </a>
             <a href="tutorial.html"
               class="px-6 py-3.5 rounded-full text-base font-semibold bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/80 shadow-sm transition-all">
@@ -541,10 +551,16 @@
           <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
             v1.3 重磅支持导入 <code>.tendies</code> 锁屏壁纸归档包，自动注入 PosterBoard 容器；集成 NeoSpring 技术，刷写后自动注销生效，告别重启手机。
           </p>
-          <span
-            class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
-            .tendies 架构 · 免重启
-          </span>
+          <div class="flex items-center justify-between">
+            <span
+              class="inline-block text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+              .tendies 架构 · 免重启
+            </span>
+            <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer"
+              class="text-xs font-semibold text-brand-600 dark:text-brand-400 hover:underline inline-flex items-center gap-1">
+              交互壁纸 ➔
+            </a>
+          </div>
         </div>
 
         <!-- 特性 5 -->
@@ -1219,6 +1235,11 @@
           </p>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-3 shrink-0">
+          <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer"
+            class="px-5 py-3 rounded-full bg-white/15 hover:bg-white/25 text-white font-semibold text-sm border border-white/20 transition-all inline-flex items-center gap-1.5">
+            <span>✨ 交互壁纸</span>
+            <span>➔</span>
+          </a>
           <a href="community.html"
             class="px-6 py-3 rounded-full bg-white text-brand-700 hover:bg-brand-50 font-bold text-sm shadow-md hover:scale-105 transition-all">
             👉 进入官方社区
@@ -1249,6 +1270,8 @@
           <a href="#features" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">功能特性</a>
           <a href="cards/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">卡面模版</a>
           <a href="pass-themes/index.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">锁屏按键</a>
+          <a href="https://wallpaper.nugget.click/wallpaper" target="_blank" rel="noopener noreferrer"
+            class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">交互壁纸</a>
           <a href="download.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">下载中心</a>
           <a href="tutorial.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">使用教程</a>
           <a href="community.html" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">官方社区</a>
