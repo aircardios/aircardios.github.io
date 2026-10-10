@@ -95,21 +95,6 @@
 
 ---
 
-## 📦 客户端与官方资源极速下载
-
-| 资源类别 | 版本 / 规模 | 适用平台 / 格式 | 网盘分流通道 |
-| :--- | :--- | :--- | :--- |
-| **iPhone 原生端 (AirCard IPA)** | **v1.3** (最新稳定版) | iOS 18+ (巨魔 / SideStore / 爱思) | [光鸭直链](https://www.guangyapan.com/s/1949022754862493787_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/b9034a60bff4) · [迅雷网盘](https://pan.xunlei.com/s/VP21gOu_3y47h8npIkeHIZPMA1?pwd=bdzw#) |
-| **Windows 原生版** | **v1.2.2** (绿色单文件) | Windows 10 / 11 (64位原生 Rust) | [光鸭直链](https://www.guangyapan.com/s/1948387958393946153_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/fb902664428a) · [迅雷网盘](https://pan.xunlei.com/s/VP1tfDFYNMEUzR6TalRh_D3yA1?pwd=9sns#) |
-| **macOS 通用版** | **v1.2.4** (DMG 双架构) | macOS 12.0+ (M系列 / Intel) | [光鸭直链](https://www.guangyapan.com/s/1949644399859953695_aeWXEya0Twth-MDh) · [夸克网盘](https://pan.quark.cn/s/b04d70d40ef6) · [迅雷网盘](https://pan.xunlei.com/s/VP2AWwvyRfEqNL5_2IyKypbUA1?pwd=sq4z#) |
-| **个性卡面制作工坊** | 在线实时 3D 渲染与导出 | 纯前端本地 1536×969 超清导出 | [进入个性卡面制作工坊 ➔](https://aircardios.github.io/cards/custom.html) (支持自定义上传、预设皮肤与芯片卡号排版) |
-| **Apple Pay 卡面素材库** | **471+ 套** 视网膜高清卡面 | 钱包卡面 / PNG 格式 | [进入卡面模版库挑选下载 ➔](https://aircardios.github.io/cards/index.html) (支持夸克网盘单卡免提取码极速直链与 55 套精选自定义卡面) |
-| **锁屏按键主题中心** | **27+ 款** 热门主题包 | iOS 18 锁屏密码按键 / `.passthm` | [进入锁屏按键主题库 ➔](https://aircardios.github.io/pass-themes/index.html) (支持光鸭网盘专属极速直链) |
-| **交互壁纸精选** | 动态与触控交互锁屏壁纸 | PosterBoard / `.tendies` 归档 | [进入交互壁纸平台 ➔](https://wallpaper.nugget.click/wallpaper) (免越狱触控动态锁屏壁纸生态) |
-| **美化扩展大礼包** | **50+ 套** 锁屏主题 & 高清卡面 | `.passthm` / PSD / PNG 模板 | [夸克网盘免费打包下载 ➔](https://pan.quark.cn/s/a7618689ad4d) (含透明质感按键与 Suica 专属矢量样式) |
-
----
-
 ## 💬 官方玩家交流社区 (QQ群)
 
 - **群名称**：AirCard & 交互壁纸交流群
@@ -207,6 +192,5 @@
 - 官方主页：[https://aircardios.github.io/](https://aircardios.github.io/)
 - 卡面素材库：[https://aircardios.github.io/cards/index.html](https://aircardios.github.io/cards/index.html)
 - 锁屏按键中心：[https://aircardios.github.io/pass-themes/index.html](https://aircardios.github.io/pass-themes/index.html)
-- 下载中心：[https://aircardios.github.io/download.html](https://aircardios.github.io/download.html)
 - 教程中心：[https://aircardios.github.io/tutorial.html](https://aircardios.github.io/tutorial.html)
 - 官方社区：[https://aircardios.github.io/community.html](https://aircardios.github.io/community.html)
