@@ -77,8 +77,8 @@
 
 ### 6. 官方玩家交流社区 (QQ群)
 - 群名称：AirCard & 交互壁纸交流群
-- QQ 群号：`1126901301`
-- 官方加群通道 (网页一键加群)：https://qm.qq.com/q/JVAlVfT2ka
-- 手机扫码通道 (二维码专用)：https://qm.qq.com/q/qAL5xZTsys
+- QQ 群号：`1129488560`
+- 官方加群通道 (网页一键加群)：https://qm.qq.com/q/7Uelltd0Nq
+- 手机扫码通道 (二维码专用)：https://qm.qq.com/q/CEMXSo67MQ
 - 交流内容：AirCard-iOS 免电脑侧载技巧、Apple Pay 卡面素材 (1536×969)、.passthm 锁屏密码按键主题、PosterBoard 交互壁纸 (.tendies) 及疑难互助避坑。
 
